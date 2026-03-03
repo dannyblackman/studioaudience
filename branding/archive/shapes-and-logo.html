@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Audience — Shapes + Logo Exploration</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-grotesk@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FE6037;
+    --blue: #3861F9;
+    --sage: #76C6B3;
+    --yellow: #FFD37D;
+    --pink: #FFBAB9;
+    --dark: #262121;
+    --cream: #FEFAF6;
+    --tan: #FAEBDC;
+    --warm-gray: #8A817A;
+    --border: #EDE5DA;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    -webkit-font-smoothing: antialiased;
+    padding: 80px 40px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-family: 'Clash Grotesk', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: var(--warm-gray);
+    margin-bottom: 80px;
+    line-height: 1.7;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Clash Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+  .section-desc {
+    font-size: 15px;
+    color: var(--warm-gray);
+    max-width: 480px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  .divider {
+    border-top: 2px solid var(--border);
+    margin: 80px 0;
+  }
+
+  /* =========================================
+     SHAPE PATTERNS
+     ========================================= */
+
+  /* Shared grid cell size */
+  .pattern {
+    margin-bottom: 40px;
+  }
+  .pattern-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--warm-gray);
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  /* =========================================
+     LOGO GRID
+     ========================================= */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .logo-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+  .logo-card:hover { border-color: var(--orange); }
+  .logo-card svg { margin-bottom: 24px; }
+  .logo-card-name {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .logo-card-desc {
+    font-size: 13px;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  /* Lockup previews */
+  .lockup-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .lockup-box {
+    border-radius: 24px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .lockup-wordmark {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+  }
+
+  @media (max-width: 768px) {
+    .logo-grid { grid-template-columns: 1fr; }
+    .lockup-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Shapes + Logo</h1>
+  <div class="subtitle">Circles and elongated ovals in brand colours. Logo concepts built from the same shapes.</div>
+
+  <!-- ==========================================
+       PART 1: SHAPE PATTERNS
+       ========================================== -->
+  <div class="section-label">01 &mdash; Shape Patterns</div>
+  <div class="section-title">Circles &amp; Ovals</div>
+  <div class="section-desc">Clean grids of circles and elongated ovals. Two shapes, one system. Colours can shift per application.</div>
+
+  <!-- Pattern A: Brand primary -->
+  <div class="pattern">
+    <div class="pattern-label">Brand Primary</div>
+    <svg viewBox="0 0 800 300" width="100%" fill="none">
+      <!-- Row 1 -->
+      <circle cx="60" cy="60" r="50" fill="#FE6037"/>
+      <circle cx="180" cy="60" r="50" fill="#D94E2B"/>
+      <rect x="250" y="10" width="200" height="100" rx="50" fill="#FE6037" opacity="0.6"/>
+      <circle cx="520" cy="60" r="50" fill="#FE6037" opacity="0.35"/>
+      <!-- Row 2 -->
+      <rect x="10" y="130" width="200" height="100" rx="50" fill="#3861F9"/>
+      <circle cx="290" cy="180" r="50" fill="#FE6037"/>
+      <circle cx="410" cy="180" r="50" fill="#FE6037" opacity="0.5"/>
+      <rect x="480" y="130" width="200" height="100" rx="50" fill="#76C6B3"/>
+    </svg>
+  </div>
+
+  <!-- Pattern B: Tonal orange -->
+  <div class="pattern">
+    <div class="pattern-label">Tonal Orange</div>
+    <svg viewBox="0 0 800 420" width="100%" fill="none">
+      <!-- Row 1 -->
+      <circle cx="60" cy="60" r="52" fill="#262121"/>
+      <circle cx="180" cy="60" r="52" fill="#C44424"/>
+      <rect x="250" y="8" width="220" height="104" rx="52" fill="#FE6037" opacity="0.5"/>
+      <circle cx="540" cy="60" r="52" fill="#FE6037"/>
+      <!-- Row 2 -->
+      <circle cx="60" cy="190" r="52" fill="#FE6037" opacity="0.3"/>
+      <rect x="130" y="138" width="220" height="104" rx="52" fill="#FE6037"/>
+      <circle cx="420" cy="190" r="52" fill="#262121" opacity="0.7"/>
+      <circle cx="540" cy="190" r="52" fill="#C44424" opacity="0.6"/>
+      <!-- Row 3 -->
+      <rect x="10" y="268" width="220" height="104" rx="52" fill="#262121" opacity="0.5"/>
+      <circle cx="300" cy="320" r="52" fill="#FE6037" opacity="0.7"/>
+      <circle cx="420" cy="320" r="52" fill="#FE6037" opacity="0.2"/>
+      <rect x="490" y="268" width="160" height="104" rx="52" fill="#C44424"/>
+    </svg>
+  </div>
+
+  <!-- Pattern C: Multi-colour -->
+  <div class="pattern">
+    <div class="pattern-label">Multi-Colour</div>
+    <svg viewBox="0 0 800 300" width="100%" fill="none">
+      <!-- Row 1 -->
+      <circle cx="60" cy="60" r="50" fill="#3861F9"/>
+      <rect x="130" y="10" width="200" height="100" rx="50" fill="#FE6037"/>
+      <circle cx="400" cy="60" r="50" fill="#FFD37D"/>
+      <circle cx="520" cy="60" r="50" fill="#76C6B3"/>
+      <!-- Row 2 -->
+      <circle cx="60" cy="180" r="50" fill="#FE6037" opacity="0.4"/>
+      <circle cx="180" cy="180" r="50" fill="#FFBAB9"/>
+      <rect x="250" y="130" width="200" height="100" rx="50" fill="#3861F9" opacity="0.6"/>
+      <rect x="470" y="130" width="200" height="100" rx="50" fill="#76C6B3" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <!-- Pattern D: On dark -->
+  <div class="pattern">
+    <div class="pattern-label">On Dark</div>
+    <div style="background: var(--dark); border-radius: 24px; padding: 40px;">
+      <svg viewBox="0 0 800 300" width="100%" fill="none">
+        <!-- Row 1 -->
+        <circle cx="60" cy="60" r="50" fill="#FE6037"/>
+        <rect x="130" y="10" width="200" height="100" rx="50" fill="#FE6037" opacity="0.4"/>
+        <circle cx="400" cy="60" r="50" fill="#76C6B3"/>
+        <rect x="470" y="10" width="200" height="100" rx="50" fill="#3861F9"/>
+        <!-- Row 2 -->
+        <rect x="10" y="130" width="200" height="100" rx="50" fill="#FFD37D" opacity="0.7"/>
+        <circle cx="280" cy="180" r="50" fill="#FE6037" opacity="0.6"/>
+        <circle cx="400" cy="180" r="50" fill="#FFBAB9" opacity="0.5"/>
+        <rect x="470" y="130" width="160" height="100" rx="50" fill="#FE6037"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ==========================================
+       PART 2: LOGO CONCEPTS
+       ========================================== -->
+  <div class="section-label">02 &mdash; Logomark</div>
+  <div class="section-title">S &amp; A Letterforms</div>
+  <div class="section-desc">Each built from the same circles and elongated ovals. Thick rounded forms with circular terminals &mdash; like the Steerwise approach.</div>
+
+  <div class="logo-grid">
+
+    <!-- 1: S from thick rounded strokes -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- S built from thick rounded strokes, like the Steerwise angular approach -->
+        <!-- Top horizontal stroke -->
+        <rect x="30" y="8" width="56" height="22" rx="11" fill="#FE6037"/>
+        <!-- Top-left circle terminal -->
+        <circle cx="30" cy="19" r="11" fill="#FE6037"/>
+        <!-- Left vertical connecting stroke -->
+        <rect x="19" y="19" width="22" height="30" rx="11" fill="#FE6037"/>
+        <!-- Middle horizontal stroke -->
+        <rect x="14" y="49" width="56" height="22" rx="11" fill="#FE6037"/>
+        <!-- Right vertical connecting stroke -->
+        <rect x="59" y="60" width="22" height="30" rx="11" fill="#FE6037"/>
+        <!-- Bottom horizontal stroke -->
+        <rect x="14" y="90" width="56" height="22" rx="11" fill="#FE6037"/>
+        <!-- Bottom-right circle terminal -->
+        <circle cx="70" cy="101" r="11" fill="#FE6037"/>
+      </svg>
+      <div class="logo-card-name">S &mdash; Connected</div>
+      <div class="logo-card-desc">Continuous thick strokes with rounded joints. Fluid and confident.</div>
+    </div>
+
+    <!-- 2: S from separate pill segments -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- Three separate pill segments forming S -->
+        <rect x="24" y="8" width="62" height="24" rx="12" fill="#FE6037"/>
+        <rect x="14" y="48" width="62" height="24" rx="12" fill="#FE6037"/>
+        <rect x="24" y="88" width="62" height="24" rx="12" fill="#FE6037"/>
+      </svg>
+      <div class="logo-card-name">S &mdash; Three Pills</div>
+      <div class="logo-card-desc">Three staggered ovals. The S emerges from the rhythm of the offset.</div>
+    </div>
+
+    <!-- 3: S from arcs with dot terminals -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- Top-right terminal circle -->
+        <circle cx="72" cy="16" r="12" fill="#FE6037"/>
+        <!-- Top arc -->
+        <path d="M72 16 C72 16, 76 44, 50 44 C24 44, 24 16, 50 16" stroke="#FE6037" stroke-width="22" stroke-linecap="round" fill="none"/>
+        <!-- Bottom arc -->
+        <path d="M28 76 C28 76, 24 48, 50 48 C76 48, 76 76, 50 76" stroke="#FE6037" stroke-width="22" stroke-linecap="round" fill="none"/>
+        <!-- Overwrite with clean version -->
+      </svg>
+      <div class="logo-card-name">S &mdash; Flowing</div>
+      <div class="logo-card-desc">Thick rounded S curve with prominent circular terminals at each end.</div>
+    </div>
+
+    <!-- 4: A from ovals -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- Left leg -->
+        <rect x="8" y="24" width="22" height="88" rx="11" fill="#262121"/>
+        <!-- Right leg -->
+        <rect x="70" y="24" width="22" height="88" rx="11" fill="#262121"/>
+        <!-- Top bridge -->
+        <rect x="19" y="8" width="62" height="24" rx="12" fill="#262121"/>
+        <!-- Crossbar in orange -->
+        <rect x="19" y="52" width="62" height="20" rx="10" fill="#FE6037"/>
+      </svg>
+      <div class="logo-card-name">A &mdash; Pill Frame</div>
+      <div class="logo-card-desc">Vertical + horizontal ovals. Dark frame, orange crossbar. Strong and open.</div>
+    </div>
+
+    <!-- 5: A from thick strokes like Steerwise -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- Left diagonal thick stroke -->
+        <line x1="20" y1="112" x2="42" y2="12" stroke="#262121" stroke-width="22" stroke-linecap="round"/>
+        <!-- Right diagonal thick stroke -->
+        <line x1="80" y1="112" x2="58" y2="12" stroke="#262121" stroke-width="22" stroke-linecap="round"/>
+        <!-- Crossbar -->
+        <rect x="22" y="62" width="56" height="18" rx="9" fill="#FE6037"/>
+      </svg>
+      <div class="logo-card-name">A &mdash; Angular</div>
+      <div class="logo-card-desc">Two thick diagonal strokes with rounded caps. Orange crossbar. Architectural.</div>
+    </div>
+
+    <!-- 6: A minimal - circle + oval -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- Large circle forming top of A -->
+        <circle cx="50" cy="42" r="34" stroke="#262121" stroke-width="20" fill="none"/>
+        <!-- Two legs extending down -->
+        <rect x="8" y="60" width="20" height="52" rx="10" fill="#262121"/>
+        <rect x="72" y="60" width="20" height="52" rx="10" fill="#262121"/>
+        <!-- Crossbar -->
+        <rect x="20" y="64" width="60" height="16" rx="8" fill="#FE6037"/>
+      </svg>
+      <div class="logo-card-name">A &mdash; Round Top</div>
+      <div class="logo-card-desc">Circular arch with pill legs and crossbar. Soft but structured.</div>
+    </div>
+
+    <!-- 7: SA combined - minimal -->
+    <div class="logo-card" style="grid-column: span 2;">
+      <svg width="200" height="100" viewBox="0 0 200 100" fill="none">
+        <!-- S -->
+        <rect x="8" y="6" width="52" height="20" rx="10" fill="#FE6037"/>
+        <rect x="2" y="40" width="52" height="20" rx="10" fill="#FE6037"/>
+        <rect x="8" y="74" width="52" height="20" rx="10" fill="#FE6037"/>
+        <!-- A -->
+        <rect x="80" y="20" width="18" height="74" rx="9" fill="#262121"/>
+        <rect x="126" y="20" width="18" height="74" rx="9" fill="#262121"/>
+        <rect x="89" y="6" width="46" height="20" rx="10" fill="#262121"/>
+        <rect x="89" y="46" width="46" height="16" rx="8" fill="#FE6037"/>
+      </svg>
+      <div class="logo-card-name">SA &mdash; Lockup</div>
+      <div class="logo-card-desc">S (three pills) + A (pill frame) side by side. Clean monogram for favicon, icon, stamp.</div>
+    </div>
+
+    <!-- 8: sa lowercase -->
+    <div class="logo-card">
+      <svg width="180" height="80" viewBox="0 0 180 80" fill="none">
+        <!-- Lowercase s: just a thick rounded S stroke -->
+        <path d="M52 14 C52 14 52 6 38 6 C24 6 16 14 16 22 C16 32 28 36 38 40 C48 44 56 48 56 58 C56 68 48 74 36 74 C22 74 16 66 16 66" stroke="#FE6037" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <!-- Lowercase a: circle + stem -->
+        <circle cx="110" cy="44" r="26" stroke="#262121" stroke-width="14" fill="none"/>
+        <rect x="122" y="18" width="14" height="56" rx="7" fill="#262121"/>
+      </svg>
+      <div class="logo-card-name">sa &mdash; Lowercase</div>
+      <div class="logo-card-desc">Thick rounded lowercase forms. The s is pure stroke, the a is a circle + stem.</div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ==========================================
+       PART 3: CONNECTING THE DOTS
+       ========================================== -->
+  <div class="section-label">03 &mdash; Concept Direction</div>
+  <div class="section-title">Connecting the Dots</div>
+  <div class="section-desc">Qual research is literally about connecting dots &mdash; finding patterns across conversations, linking insights to outcomes. The mark IS that process.</div>
+
+  <div class="logo-grid">
+
+    <!-- Dots forming S with connections -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- Dots in S formation -->
+        <circle cx="70" cy="16" r="10" fill="#FE6037"/>
+        <circle cx="40" cy="16" r="10" fill="#FE6037" opacity="0.4"/>
+        <circle cx="30" cy="44" r="10" fill="#FE6037" opacity="0.6"/>
+        <circle cx="60" cy="60" r="10" fill="#FE6037"/>
+        <circle cx="70" cy="80" r="10" fill="#FE6037" opacity="0.6"/>
+        <circle cx="30" cy="104" r="10" fill="#FE6037"/>
+        <circle cx="60" cy="104" r="10" fill="#FE6037" opacity="0.4"/>
+        <!-- Connection lines -->
+        <line x1="70" y1="16" x2="40" y2="16" stroke="#262121" stroke-width="2" opacity="0.2"/>
+        <line x1="40" y1="16" x2="30" y2="44" stroke="#262121" stroke-width="2" opacity="0.2"/>
+        <line x1="30" y1="44" x2="60" y2="60" stroke="#262121" stroke-width="2" opacity="0.2"/>
+        <line x1="60" y1="60" x2="70" y2="80" stroke="#262121" stroke-width="2" opacity="0.2"/>
+        <line x1="70" y1="80" x2="60" y2="104" stroke="#262121" stroke-width="2" opacity="0.2"/>
+        <line x1="60" y1="104" x2="30" y2="104" stroke="#262121" stroke-width="2" opacity="0.2"/>
+      </svg>
+      <div class="logo-card-name">Dots &mdash; S Path</div>
+      <div class="logo-card-desc">Dots traced through an S path. Varying opacity = the insight emerging from noise.</div>
+    </div>
+
+    <!-- Dots clustered, one line connecting them -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- Scattered dots -->
+        <circle cx="20" cy="24" r="8" fill="#262121" opacity="0.15"/>
+        <circle cx="72" cy="18" r="8" fill="#262121" opacity="0.15"/>
+        <circle cx="44" cy="40" r="8" fill="#262121" opacity="0.15"/>
+        <circle cx="16" cy="68" r="8" fill="#262121" opacity="0.15"/>
+        <circle cx="80" cy="56" r="8" fill="#262121" opacity="0.15"/>
+        <circle cx="56" cy="80" r="8" fill="#262121" opacity="0.15"/>
+        <circle cx="30" cy="100" r="8" fill="#262121" opacity="0.15"/>
+        <circle cx="74" cy="98" r="8" fill="#262121" opacity="0.15"/>
+        <!-- The insight: 3 dots connected -->
+        <circle cx="44" cy="40" r="10" fill="#FE6037"/>
+        <circle cx="80" cy="56" r="10" fill="#FE6037"/>
+        <circle cx="56" cy="80" r="10" fill="#FE6037"/>
+        <line x1="44" y1="40" x2="80" y2="56" stroke="#FE6037" stroke-width="2.5"/>
+        <line x1="80" y1="56" x2="56" y2="80" stroke="#FE6037" stroke-width="2.5"/>
+        <line x1="56" y1="80" x2="44" y2="40" stroke="#FE6037" stroke-width="2.5"/>
+      </svg>
+      <div class="logo-card-name">Three Connected</div>
+      <div class="logo-card-desc">Most dots are grey noise. Three light up and connect &mdash; the insight found in the data.</div>
+    </div>
+
+    <!-- Dots in grid, some connected diagonally -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- 3x4 dot grid -->
+        <circle cx="22" cy="18" r="8" fill="#262121" opacity="0.12"/>
+        <circle cx="50" cy="18" r="8" fill="#FE6037"/>
+        <circle cx="78" cy="18" r="8" fill="#262121" opacity="0.12"/>
+        <circle cx="22" cy="46" r="8" fill="#262121" opacity="0.12"/>
+        <circle cx="50" cy="46" r="8" fill="#FE6037"/>
+        <circle cx="78" cy="46" r="8" fill="#FE6037"/>
+        <circle cx="22" cy="74" r="8" fill="#FE6037"/>
+        <circle cx="50" cy="74" r="8" fill="#FE6037"/>
+        <circle cx="78" cy="74" r="8" fill="#262121" opacity="0.12"/>
+        <circle cx="22" cy="102" r="8" fill="#262121" opacity="0.12"/>
+        <circle cx="50" cy="102" r="8" fill="#262121" opacity="0.12"/>
+        <circle cx="78" cy="102" r="8" fill="#FE6037"/>
+        <!-- Diagonal connection through lit dots -->
+        <line x1="50" y1="18" x2="78" y2="46" stroke="#FE6037" stroke-width="2" opacity="0.35"/>
+        <line x1="78" y1="46" x2="50" y2="74" stroke="#FE6037" stroke-width="2" opacity="0.35"/>
+        <line x1="50" y1="74" x2="22" y2="74" stroke="#FE6037" stroke-width="2" opacity="0.35"/>
+        <line x1="50" y1="46" x2="22" y2="74" stroke="#FE6037" stroke-width="2" opacity="0.35"/>
+        <line x1="78" y1="74" x2="78" y2="102" stroke="#FE6037" stroke-width="2" opacity="0.35"/>
+      </svg>
+      <div class="logo-card-name">Grid &mdash; Pattern Found</div>
+      <div class="logo-card-desc">A grid of data points. Some light up and connect &mdash; the pattern in the noise.</div>
+    </div>
+
+    <!-- Abstract: 5 dots connected in a simple constellation -->
+    <div class="logo-card">
+      <svg width="100" height="120" viewBox="0 0 100 120" fill="none">
+        <!-- 5 dots in distinctive arrangement -->
+        <line x1="50" y1="16" x2="78" y2="40" stroke="#262121" stroke-width="2" opacity="0.15"/>
+        <line x1="78" y1="40" x2="66" y2="80" stroke="#262121" stroke-width="2" opacity="0.15"/>
+        <line x1="66" y1="80" x2="30" y2="90" stroke="#262121" stroke-width="2" opacity="0.15"/>
+        <line x1="30" y1="90" x2="20" y2="48" stroke="#262121" stroke-width="2" opacity="0.15"/>
+        <line x1="20" y1="48" x2="50" y2="16" stroke="#262121" stroke-width="2" opacity="0.15"/>
+        <!-- Cross connections -->
+        <line x1="50" y1="16" x2="66" y2="80" stroke="#FE6037" stroke-width="2" opacity="0.25"/>
+        <line x1="20" y1="48" x2="78" y2="40" stroke="#FE6037" stroke-width="2" opacity="0.25"/>
+        <!-- Dots on top -->
+        <circle cx="50" cy="16" r="11" fill="#FE6037"/>
+        <circle cx="78" cy="40" r="9" fill="#262121"/>
+        <circle cx="66" cy="80" r="10" fill="#262121"/>
+        <circle cx="30" cy="90" r="9" fill="#262121"/>
+        <circle cx="20" cy="48" r="11" fill="#FE6037"/>
+      </svg>
+      <div class="logo-card-name">Constellation</div>
+      <div class="logo-card-desc">Five points, connected. An abstract constellation &mdash; the insight map. Two key dots in orange.</div>
+    </div>
+
+    <!-- Connecting dots: simple, just 3 dots and 2 lines -->
+    <div class="logo-card">
+      <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+        <line x1="24" y1="76" x2="60" y2="24" stroke="#262121" stroke-width="3" opacity="0.15"/>
+        <line x1="60" y1="24" x2="96" y2="76" stroke="#262121" stroke-width="3" opacity="0.15"/>
+        <circle cx="24" cy="76" r="14" fill="#262121"/>
+        <circle cx="60" cy="24" r="14" fill="#FE6037"/>
+        <circle cx="96" cy="76" r="14" fill="#262121"/>
+      </svg>
+      <div class="logo-card-name">Three Dots</div>
+      <div class="logo-card-desc">As simple as it gets. Three data points, two connections, one insight (orange). Iconic.</div>
+    </div>
+
+    <!-- Dots with oval connector -->
+    <div class="logo-card">
+      <svg width="120" height="100" viewBox="0 0 120 100" fill="none">
+        <!-- Oval connector behind -->
+        <rect x="20" y="34" width="80" height="32" rx="16" fill="#FE6037" opacity="0.15"/>
+        <!-- Three dots sitting on the oval -->
+        <circle cx="32" cy="50" r="14" fill="#FE6037"/>
+        <circle cx="60" cy="50" r="14" fill="#262121"/>
+        <circle cx="88" cy="50" r="14" fill="#FE6037" opacity="0.5"/>
+      </svg>
+      <div class="logo-card-name">Linked</div>
+      <div class="logo-card-desc">Three dots joined by an oval. Circles + ovals working together. The dots are the audience, the oval is the connection.</div>
+    </div>
+
+  </div>
+
+  <!-- Lockup previews with wordmark -->
+  <div class="lockup-row">
+    <div class="lockup-box" style="background: var(--white); border: 1px solid var(--border);">
+      <svg width="40" height="48" viewBox="0 0 100 120" fill="none">
+        <rect x="24" y="8" width="62" height="24" rx="12" fill="#FE6037"/>
+        <rect x="14" y="48" width="62" height="24" rx="12" fill="#FE6037"/>
+        <rect x="24" y="88" width="62" height="24" rx="12" fill="#FE6037"/>
+      </svg>
+      <div class="lockup-wordmark" style="color: var(--dark);">studio <span style="color: var(--orange);">audience</span></div>
+    </div>
+    <div class="lockup-box" style="background: var(--dark);">
+      <svg width="40" height="48" viewBox="0 0 100 120" fill="none">
+        <rect x="24" y="8" width="62" height="24" rx="12" fill="#FE6037"/>
+        <rect x="14" y="48" width="62" height="24" rx="12" fill="#FE6037"/>
+        <rect x="24" y="88" width="62" height="24" rx="12" fill="#FE6037"/>
+      </svg>
+      <div class="lockup-wordmark" style="color: #fff;">studio <span style="color: var(--orange);">audience</span></div>
+    </div>
+    <div class="lockup-box" style="background: var(--white); border: 1px solid var(--border);">
+      <svg width="56" height="32" viewBox="0 0 200 100" fill="none">
+        <rect x="8" y="6" width="52" height="20" rx="10" fill="#FE6037"/>
+        <rect x="2" y="40" width="52" height="20" rx="10" fill="#FE6037"/>
+        <rect x="8" y="74" width="52" height="20" rx="10" fill="#FE6037"/>
+        <rect x="80" y="20" width="18" height="74" rx="9" fill="#262121"/>
+        <rect x="126" y="20" width="18" height="74" rx="9" fill="#262121"/>
+        <rect x="89" y="6" width="46" height="20" rx="10" fill="#262121"/>
+        <rect x="89" y="46" width="46" height="16" rx="8" fill="#FE6037"/>
+      </svg>
+      <div class="lockup-wordmark" style="color: var(--dark);">studio <span style="color: var(--orange);">audience</span></div>
+    </div>
+    <div class="lockup-box" style="background: var(--orange);">
+      <svg width="56" height="32" viewBox="0 0 200 100" fill="none">
+        <rect x="8" y="6" width="52" height="20" rx="10" fill="#fff"/>
+        <rect x="2" y="40" width="52" height="20" rx="10" fill="#fff"/>
+        <rect x="8" y="74" width="52" height="20" rx="10" fill="#fff"/>
+        <rect x="80" y="20" width="18" height="74" rx="9" fill="#fff"/>
+        <rect x="126" y="20" width="18" height="74" rx="9" fill="#fff"/>
+        <rect x="89" y="6" width="46" height="20" rx="10" fill="#fff"/>
+        <rect x="89" y="46" width="46" height="16" rx="8" fill="#fff" opacity="0.5"/>
+      </svg>
+      <div class="lockup-wordmark" style="color: #fff;">studio audience</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

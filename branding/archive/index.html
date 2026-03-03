@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Audience — Research that thinks and feels.</title>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Core brand */
+    --indigo: #6C5CE7;
+    --indigo-dark: #5A4BD6;
+    --indigo-light: #A29BFE;
+    --indigo-pale: #EDE9FF;
+    --mint: #00D4AA;
+    --mint-light: #D0FFF2;
+
+    /* Warm palette */
+    --cream: #FFF9F4;
+    --cream-warm: #FFF3E8;
+    --peach: #FFE4D4;
+    --coral: #FF7B54;
+    --coral-light: #FFEEE6;
+    --blue: #3861F9;
+    --teal: #4ECDC4;
+
+    /* Neutrals */
+    --text-dark: #1A1025;
+    --text-body: #4A4358;
+    --text-muted: #8A839A;
+    --text-light: #B5B0C2;
+    --border: #EDE8F5;
+    --bg-white: #FFFFFF;
+    --bg-cream: #FFFBF7;
+    --bg-soft: #F9F7FD;
+
+    /* Spacing */
+    --section-pad: 140px;
+    --container: 1140px;
+    --radius: 24px;
+    --radius-sm: 14px;
+    --radius-pill: 999px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg-cream);
+    color: var(--text-body);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* =========================================
+     NAV
+     ========================================= */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 32px;
+    transition: background 0.3s, backdrop-filter 0.3s;
+  }
+  .nav.scrolled {
+    background: rgba(255, 251, 247, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--text-dark);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .nav-logo span { color: var(--indigo); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-body);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--indigo); }
+  .nav-cta {
+    background: var(--indigo) !important;
+    color: #fff !important;
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--indigo-dark) !important; }
+
+  /* =========================================
+     HERO
+     ========================================= */
+  .hero {
+    padding: 180px 32px var(--section-pad);
+    text-align: center;
+    background: var(--indigo);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 48px 48px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0,212,170,0.15) 0%, transparent 60%);
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(162,155,254,0.2) 0%, transparent 60%);
+    bottom: -100px;
+    left: -100px;
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(255,255,255,0.12);
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 32px;
+    backdrop-filter: blur(10px);
+  }
+  .hero-badge .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--mint);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    font-family: 'Clash Grotesk', 'Satoshi', sans-serif;
+    font-size: 72px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--mint);
+  }
+  .hero-sub {
+    font-size: 19px;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* =========================================
+     BUTTONS
+     ========================================= */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: var(--radius-pill);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    letter-spacing: -0.2px;
+  }
+  .btn-white {
+    background: #fff;
+    color: var(--indigo);
+  }
+  .btn-white:hover { background: var(--indigo-pale); }
+  .btn-ghost-white {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.3);
+  }
+  .btn-ghost-white:hover { border-color: rgba(255,255,255,0.6); }
+  .btn-indigo {
+    background: var(--indigo);
+    color: #fff;
+  }
+  .btn-indigo:hover { background: var(--indigo-dark); }
+  .btn-coral {
+    background: var(--coral);
+    color: #fff;
+  }
+  .btn-coral:hover { background: #e86a45; }
+  .btn-mint {
+    background: var(--mint);
+    color: var(--text-dark);
+  }
+  .btn-mint:hover { background: #00c49d; }
+  .btn-outline {
+    background: transparent;
+    color: var(--indigo);
+    border: 1.5px solid var(--indigo);
+  }
+  .btn-outline:hover { background: var(--indigo-pale); }
+  .btn-sm { padding: 12px 24px; font-size: 14px; }
+  .btn-arrow::after { content: '→'; margin-left: 4px; }
+
+  /* =========================================
+     SOCIAL PROOF
+     ========================================= */
+  .proof {
+    padding: 80px 32px;
+    text-align: center;
+    background: var(--bg-cream);
+  }
+  .proof-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .proof-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    opacity: 0.4;
+  }
+  .proof-logos span {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  /* =========================================
+     SECTION STYLES
+     ========================================= */
+  .section {
+    padding: var(--section-pad) 32px;
+  }
+  .section-cream { background: var(--bg-cream); }
+  .section-white { background: var(--bg-white); border-radius: 48px; }
+  .section-indigo { background: var(--indigo); border-radius: 48px; color: #fff; }
+  .section-soft { background: var(--bg-soft); border-radius: 48px; }
+  .section-coral { background: var(--coral); border-radius: 48px; color: #fff; }
+
+  .section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 64px;
+  }
+  .section-overline {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--indigo);
+    margin-bottom: 16px;
+  }
+  .section-indigo .section-overline { color: var(--mint); }
+  .section-coral .section-overline { color: rgba(255,255,255,0.6); }
+  .section-header h2 {
+    font-family: 'Clash Grotesk', 'Satoshi', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+  .section-indigo .section-header h2 { color: #fff; }
+  .section-coral .section-header h2 { color: #fff; }
+  .section-header p {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .section-indigo .section-header p { color: rgba(255,255,255,0.65); }
+  .section-coral .section-header p { color: rgba(255,255,255,0.75); }
+
+  /* =========================================
+     SERVICES GRID
+     ========================================= */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .service-card {
+    background: var(--bg-cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .service-card:hover {
+    border-color: var(--indigo-light);
+    box-shadow: 0 8px 40px rgba(108, 92, 231, 0.08);
+  }
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  .service-icon.indigo { background: var(--indigo-pale); }
+  .service-icon.coral { background: var(--coral-light); }
+  .service-icon.mint { background: var(--mint-light); }
+  .service-card h3 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+  }
+  .service-card p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* =========================================
+     FEATURE SPLIT (image + text)
+     ========================================= */
+  .feature-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .feature-split.reverse { direction: rtl; }
+  .feature-split.reverse > * { direction: ltr; }
+  .feature-visual {
+    background: var(--indigo-pale);
+    border-radius: var(--radius);
+    aspect-ratio: 1.1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .feature-visual.coral-bg { background: var(--coral-light); }
+  .feature-visual.mint-bg { background: var(--mint-light); }
+  .feature-visual svg { width: 60%; height: 60%; }
+  .feature-text h3 {
+    font-family: 'Clash Grotesk', 'Satoshi', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+  .feature-text p {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-body);
+    font-weight: 500;
+  }
+  .feature-list li::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: var(--indigo-pale);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 1px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 7l3 3 5-5' stroke='%236C5CE7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* =========================================
+     PROCESS / HOW IT WORKS
+     ========================================= */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .process-step {
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .process-number {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    color: var(--mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    margin: 0 auto 20px;
+  }
+  .process-step h4 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .process-step p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+
+  /* =========================================
+     STATS BAR
+     ========================================= */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Clash Grotesk', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: var(--indigo);
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* =========================================
+     TESTIMONIALS
+     ========================================= */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+  .testimonial-card {
+    background: var(--bg-cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+  }
+  .testimonial-stars {
+    color: var(--coral);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .testimonial-quote {
+    font-size: 17px;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--indigo-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--indigo);
+  }
+  .testimonial-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  .testimonial-role {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* =========================================
+     CTA SECTION
+     ========================================= */
+  .cta-section {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--section-pad) 32px;
+  }
+  .cta-section h2 {
+    font-family: 'Clash Grotesk', 'Satoshi', sans-serif;
+    font-size: 52px;
+    font-weight: 600;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .cta-section p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+  .cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* =========================================
+     FOOTER
+     ========================================= */
+  .footer {
+    padding: 80px 32px 40px;
+    background: var(--bg-cream);
+  }
+  .footer-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .footer-brand .nav-logo {
+    font-size: 24px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  .footer-brand p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 280px;
+  }
+  .footer-col h4 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .footer-col a {
+    display: block;
+    font-size: 14px;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 6px 0;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--indigo); }
+  .footer-bottom {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-light);
+  }
+
+  /* =========================================
+     DIVIDER
+     ========================================= */
+  .divider {
+    width: 100%;
+    max-width: 800px;
+    height: 2px;
+    background: var(--border);
+    margin: 0 auto;
+  }
+
+  /* =========================================
+     RESPONSIVE
+     ========================================= */
+  @media (max-width: 1024px) {
+    .hero h1 { font-size: 52px; letter-spacing: -2px; }
+    .section-header h2 { font-size: 38px; }
+    .feature-text h3 { font-size: 30px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    :root { --section-pad: 80px; }
+    .nav-links { display: none; }
+    .hero { padding: 140px 24px 80px; border-radius: 0 0 32px 32px; }
+    .hero h1 { font-size: 40px; letter-spacing: -1.5px; }
+    .hero-sub { font-size: 16px; }
+    .section-header h2 { font-size: 32px; letter-spacing: -1px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .feature-split { grid-template-columns: 1fr; gap: 40px; }
+    .feature-split.reverse { direction: ltr; }
+    .process-grid { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .cta-section h2 { font-size: 36px; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .stat-number { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">studio <span>audience</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#cta" class="nav-cta">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      UX Research &amp; CX Agency for Startups
+    </div>
+    <h1>Research that <em>thinks</em> and <em>feels.</em></h1>
+    <p class="hero-sub">We pair AI-powered analysis with human intuition to uncover the insights that help you build products people actually want.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn btn-white btn-arrow">Book a Discovery Call</a>
+      <a href="#" class="btn btn-ghost-white">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOCIAL PROOF ========== -->
+<section class="proof">
+  <div class="proof-label">Trusted by product teams at</div>
+  <div class="proof-logos">
+    <span>Acme</span>
+    <span>Basecamp</span>
+    <span>Runway</span>
+    <span>Loom</span>
+    <span>Notion</span>
+    <span>Linear</span>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section section-white" id="services">
+  <div class="section-header">
+    <div class="section-overline">What We Do</div>
+    <h2>Deep research, clear answers.</h2>
+    <p>From discovery to delivery, we bring structure to the messy process of understanding your users.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon indigo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <h3>User Research</h3>
+      <p>Qualitative and quantitative research that gets to the heart of what your users need, want, and struggle with.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon coral">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>CX Strategy</h3>
+      <p>End-to-end customer experience mapping and strategy that aligns every touchpoint with what your audience expects.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon mint">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3>Usability Testing</h3>
+      <p>Moderated and unmoderated testing that reveals friction, confusion, and opportunity — before your users find it first.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon indigo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Voice of Customer</h3>
+      <p>Continuous feedback programs that keep your finger on the pulse of customer sentiment and evolving needs.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon coral">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <h3>AI-Powered Analysis</h3>
+      <p>We use AI to process and synthesise large data sets, finding patterns and signals that manual analysis would miss.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon mint">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
+      <h3>Research Ops</h3>
+      <p>Tools, processes, and frameworks to make research a habit — not a one-off project. Scale insight across your org.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<section class="section section-cream">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">150+</div>
+      <div class="stat-label">Research projects delivered</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">40+</div>
+      <div class="stat-label">Startup &amp; scale-up clients</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">12k+</div>
+      <div class="stat-label">User interviews conducted</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3.2x</div>
+      <div class="stat-label">Average conversion lift</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURE 1 ========== -->
+<section class="section section-soft">
+  <div class="feature-split">
+    <div class="feature-visual">
+      <svg viewBox="0 0 200 200" fill="none">
+        <!-- Scattered dots converging -->
+        <circle cx="20" cy="30" r="6" fill="#D5D2EB"/>
+        <circle cx="180" cy="25" r="5" fill="#D5D2EB"/>
+        <circle cx="25" cy="170" r="5" fill="#D5D2EB"/>
+        <circle cx="175" cy="175" r="6" fill="#D5D2EB"/>
+        <circle cx="100" cy="15" r="5" fill="#D5D2EB"/>
+        <circle cx="15" cy="100" r="5" fill="#D5D2EB"/>
+        <circle cx="185" cy="100" r="5" fill="#D5D2EB"/>
+        <circle cx="60" cy="60" r="7" fill="#A29BFE"/>
+        <circle cx="140" cy="55" r="7" fill="#A29BFE"/>
+        <circle cx="65" cy="140" r="7" fill="#A29BFE"/>
+        <circle cx="135" cy="140" r="7" fill="#A29BFE"/>
+        <line x1="60" y1="60" x2="100" y2="100" stroke="#6C5CE7" stroke-width="1.5" opacity="0.3"/>
+        <line x1="140" y1="55" x2="100" y2="100" stroke="#6C5CE7" stroke-width="1.5" opacity="0.3"/>
+        <line x1="65" y1="140" x2="100" y2="100" stroke="#6C5CE7" stroke-width="1.5" opacity="0.3"/>
+        <line x1="135" y1="140" x2="100" y2="100" stroke="#6C5CE7" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="100" cy="100" r="12" fill="#6C5CE7"/>
+        <circle cx="100" cy="100" r="20" stroke="#6C5CE7" stroke-width="1.5" opacity="0.2"/>
+        <circle cx="100" cy="100" r="30" stroke="#6C5CE7" stroke-width="1" opacity="0.1"/>
+      </svg>
+    </div>
+    <div class="feature-text">
+      <h3>Intelligence meets intuition.</h3>
+      <p>We don't just run studies — we connect dots. Our AI layer processes thousands of data points while our researchers bring the empathy and context that machines can't.</p>
+      <ul class="feature-list">
+        <li>AI-powered thematic analysis across interviews</li>
+        <li>Sentiment patterns surfaced in real-time</li>
+        <li>Human researchers validate every insight</li>
+        <li>Actionable recommendations, not just data dumps</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURE 2 ========== -->
+<section class="section section-cream">
+  <div class="feature-split reverse">
+    <div class="feature-visual coral-bg">
+      <svg viewBox="0 0 200 200" fill="none">
+        <!-- Journey map visual -->
+        <line x1="30" y1="100" x2="170" y2="100" stroke="#FFB39A" stroke-width="2" stroke-dasharray="4 4"/>
+        <circle cx="40" cy="120" r="8" fill="#FF7B54" opacity="0.6"/>
+        <circle cx="75" cy="80" r="9" fill="#FF7B54" opacity="0.7"/>
+        <circle cx="110" cy="110" r="8" fill="#FF7B54" opacity="0.8"/>
+        <circle cx="145" cy="60" r="10" fill="#FF7B54"/>
+        <polyline points="40,120 75,80 110,110 145,60" stroke="#FF7B54" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Highlight best moment -->
+        <circle cx="145" cy="60" r="16" stroke="#FF7B54" stroke-width="1.5" fill="none" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="feature-text">
+      <h3>See the whole journey, not just moments.</h3>
+      <p>We map the complete customer experience — from first touch to long-term retention — so you understand where you're winning and where you're losing people.</p>
+      <ul class="feature-list">
+        <li>End-to-end journey mapping</li>
+        <li>Emotional highs and lows identified</li>
+        <li>Drop-off points diagnosed with evidence</li>
+        <li>Prioritised opportunities ranked by impact</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section class="section section-indigo" id="process">
+  <div class="section-header">
+    <div class="section-overline">How It Works</div>
+    <h2>From questions to clarity in four steps.</h2>
+    <p>We've refined our process to move fast without cutting corners. Most engagements deliver actionable insights within 2-4 weeks.</p>
+  </div>
+
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-number">01</div>
+      <h4>Discover</h4>
+      <p>We align on your goals, define research questions, and design the right methodology for your stage and budget.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-number">02</div>
+      <h4>Research</h4>
+      <p>Interviews, surveys, usability tests, analytics — we run the study while our AI processes signals in real-time.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-number">03</div>
+      <h4>Synthesise</h4>
+      <p>We combine AI analysis with human interpretation to distil findings into clear themes and patterns.</p>
+    </div>
+    <div class="process-step">
+      <div class="process-number">04</div>
+      <h4>Deliver</h4>
+      <p>Actionable recommendations your team can run with — not a 60-page report that collects dust.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section section-white" id="testimonials">
+  <div class="section-header">
+    <div class="section-overline">What Clients Say</div>
+    <h2>Research teams love working with us.</h2>
+    <p>From early-stage founders to VP-level product leaders, we help teams make confident decisions.</p>
+  </div>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testimonial-quote">"Studio Audience helped us completely rethink our onboarding. They found the exact moment users were dropping off and gave us three fixes — two shipped the same week. Conversion up 40%."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AK</div>
+        <div>
+          <div class="testimonial-name">Alex Kim</div>
+          <div class="testimonial-role">Head of Product, Runway</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testimonial-quote">"The speed was unreal. They ran 20 user interviews in a week and the AI analysis surfaced patterns we'd been debating for months. Best investment we've made in product this year."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">SL</div>
+        <div>
+          <div class="testimonial-name">Sara Lopez</div>
+          <div class="testimonial-role">CEO &amp; Co-founder, Basecamp</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testimonial-quote">"What I love is they don't just hand you data — they tell you the story. Their recommendations are specific, prioritised, and immediately actionable."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">JT</div>
+        <div>
+          <div class="testimonial-name">James Taylor</div>
+          <div class="testimonial-role">VP Design, Loom</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testimonial-quote">"They set up our entire research ops — tooling, templates, participant pipeline. Now any PM on the team can run a study. That's the real unlock."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MR</div>
+        <div>
+          <div class="testimonial-name">Maria Ruiz</div>
+          <div class="testimonial-role">Director of Product, Linear</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURE 3 ========== -->
+<section class="section section-cream" id="results">
+  <div class="feature-split">
+    <div class="feature-visual mint-bg">
+      <svg viewBox="0 0 200 200" fill="none">
+        <!-- Dashboard/report visual -->
+        <rect x="30" y="40" width="140" height="120" rx="12" fill="white" stroke="#00D4AA" stroke-width="1.5"/>
+        <rect x="45" y="60" width="50" height="8" rx="4" fill="#D0FFF2"/>
+        <rect x="45" y="78" width="80" height="6" rx="3" fill="#E8E7F0"/>
+        <rect x="45" y="92" width="65" height="6" rx="3" fill="#E8E7F0"/>
+        <!-- Chart bars -->
+        <rect x="45" y="128" width="16" height="20" rx="4" fill="#D0FFF2"/>
+        <rect x="67" y="118" width="16" height="30" rx="4" fill="#A29BFE"/>
+        <rect x="89" y="108" width="16" height="40" rx="4" fill="#6C5CE7"/>
+        <rect x="111" y="98" width="16" height="50" rx="4" fill="#00D4AA"/>
+        <!-- Sparkle -->
+        <circle cx="145" cy="55" r="4" fill="#00D4AA"/>
+        <line x1="145" y1="47" x2="145" y2="63" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="137" y1="55" x2="153" y2="55" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="feature-text">
+      <h3>Insights you can act on this week.</h3>
+      <p>We deliver findings in formats your team will actually use — prioritised playbooks, Notion-ready docs, and live workshop readouts. No 100-slide decks.</p>
+      <ul class="feature-list">
+        <li>Prioritised recommendation playbooks</li>
+        <li>Shareable Notion / Confluence-ready docs</li>
+        <li>Live team workshop to align on next steps</li>
+        <li>Quarterly check-ins to track impact</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="section section-coral" id="cta">
+  <div class="cta-section">
+    <h2>Ready to understand your audience?</h2>
+    <p>Book a free 30-minute discovery call. We'll talk about your product, your users, and how research can unlock your next big win.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-white btn-arrow">Book a Discovery Call</a>
+      <a href="#" class="btn btn-ghost-white">hello@studioaudience.co</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo">studio <span>audience</span></a>
+      <p>UX research and CX agency for startups and scale-ups. Research that thinks and feels.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">User Research</a>
+      <a href="#">CX Strategy</a>
+      <a href="#">Usability Testing</a>
+      <a href="#">Voice of Customer</a>
+      <a href="#">Research Ops</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">hello@studioaudience.co</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter / X</a>
+      <a href="#">Book a Call</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Studio Audience. All rights reserved.</span>
+    <span>Privacy Policy &middot; Terms</span>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+
+</body>
+</html>

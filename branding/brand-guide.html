@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Audience — Brand Guidelines</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-grotesk@400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FE6037;
+    --blue: #3861F9;
+    --sage: #76C6B3;
+    --yellow: #FFD37D;
+    --pink: #FFBAB9;
+    --peach: #FFA37C;
+    --sky: #70A2E1;
+    --dark: #262121;
+    --cream: #FEFAF6;
+    --tan: #FAEBDC;
+    --warm-gray: #8A817A;
+    --border: #EDE5DA;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* =========================================
+     NAV
+     ========================================= */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(254, 250, 246, 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .nav.scrolled { border-bottom-color: var(--border); }
+  .nav-wordmark {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    color: var(--dark);
+  }
+  .nav-wordmark span { color: var(--orange); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--dark); }
+
+  /* =========================================
+     GLOBAL
+     ========================================= */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .section-label {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::before {
+    content: '';
+    width: 32px; height: 2px;
+    background: var(--orange);
+  }
+  .section-label.light { color: var(--peach); }
+  .section-label.light::before { background: var(--peach); }
+
+  .section-title {
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(48px, 6vw, 80px);
+    letter-spacing: -3px;
+    line-height: 0.95;
+    margin-bottom: 24px;
+  }
+
+  .section-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  /* Scroll reveals */
+  .reveal {
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-d1 { transition-delay: 0.1s; }
+  .reveal-d2 { transition-delay: 0.2s; }
+  .reveal-d3 { transition-delay: 0.3s; }
+
+  /* =========================================
+     COVER
+     ========================================= */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: -20%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(254,96,55,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .cover-badge {
+    display: inline-flex;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    padding: 10px 20px;
+    background: rgba(254, 96, 55, 0.08);
+    border-radius: 999px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .cover-wordmark {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900;
+    font-size: clamp(72px, 10vw, 140px);
+    letter-spacing: -5px;
+    line-height: 0.9;
+    color: var(--dark);
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .cover-wordmark span { color: var(--orange); }
+  .cover-tagline {
+    font-family: 'Clash Grotesk', sans-serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 500;
+    color: var(--warm-gray);
+    letter-spacing: -1px;
+    line-height: 1.3;
+    max-width: 500px;
+    margin-bottom: 64px;
+    animation: fadeUp 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 56px;
+    animation: fadeUp 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .cover-meta dt {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 6px;
+  }
+  .cover-meta dd {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* =========================================
+     COLOR BAND — full bleed swatches
+     ========================================= */
+  .color-band {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 320px;
+  }
+  .color-band-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+    position: relative;
+    transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+  }
+  .color-band-cell:hover { flex-grow: 1.3; }
+  .color-band-name {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    margin-bottom: 2px;
+  }
+  .color-band-hex {
+    font-family: 'Inter', monospace;
+    font-size: 13px;
+    opacity: 0.7;
+  }
+  .color-band-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    opacity: 0.5;
+    margin-top: 4px;
+  }
+
+  /* Color detail section */
+  .colors-section {
+    padding: 160px 0 120px;
+  }
+  .colors-header {
+    margin-bottom: 80px;
+  }
+
+  .colors-extended-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 12px;
+  }
+  .color-ext {
+    text-align: center;
+    cursor: default;
+  }
+  .color-ext-swatch {
+    aspect-ratio: 1;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+  }
+  .color-ext:hover .color-ext-swatch {
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  }
+  .color-ext-name {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 2px;
+  }
+  .color-ext-hex {
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    color: var(--warm-gray);
+  }
+
+  /* =========================================
+     TYPOGRAPHY — dark section
+     ========================================= */
+  .type-section {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 160px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .type-section::before {
+    content: 'Aa';
+    position: absolute;
+    top: -80px; right: -40px;
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 500px;
+    letter-spacing: -20px;
+    color: rgba(255,255,255,0.025);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .type-header { margin-bottom: 96px; position: relative; z-index: 1; }
+  .type-header .section-sub { color: rgba(254, 250, 246, 0.5); }
+
+  .type-specimens { position: relative; z-index: 1; }
+
+  .type-specimen {
+    padding: 64px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .type-specimen:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+  .type-meta-name {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .type-meta-weight {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(254,250,246,0.4);
+    margin-bottom: 2px;
+  }
+  .type-meta-use {
+    display: inline-block;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-top: 12px;
+    padding: 4px 10px;
+    background: rgba(254,96,55,0.12);
+    border-radius: 6px;
+  }
+
+  .type-sample-display {
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: clamp(52px, 6vw, 88px);
+    letter-spacing: -3px;
+    line-height: 0.95;
+    color: var(--cream);
+  }
+  .type-sample-heading {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900;
+    font-size: clamp(40px, 4.5vw, 64px);
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--cream);
+  }
+  .type-sample-heading-sub {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: rgba(254,250,246,0.5);
+    margin-top: 20px;
+  }
+  .type-sample-body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(254,250,246,0.7);
+    max-width: 560px;
+  }
+  .type-sample-body strong {
+    font-weight: 500;
+    color: var(--cream);
+  }
+
+  /* Type scale */
+  .type-scale {
+    margin-top: 96px;
+    position: relative;
+    z-index: 1;
+  }
+  .type-scale-row {
+    display: flex;
+    align-items: baseline;
+    gap: 32px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .type-scale-size {
+    font-family: 'Inter', monospace;
+    font-size: 12px;
+    color: rgba(254,250,246,0.3);
+    width: 56px;
+    flex-shrink: 0;
+  }
+  .type-scale-label {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--orange);
+    width: 80px;
+    flex-shrink: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .type-scale-sample { color: var(--cream); }
+
+  /* =========================================
+     WORDMARK
+     ========================================= */
+  .wordmark-section {
+    padding: 160px 0;
+  }
+  .wordmark-header { margin-bottom: 80px; }
+  .wordmark-header .section-title span { color: var(--orange); }
+
+  .wordmark-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .wm-card {
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 64px;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .wm-card:hover { transform: scale(1.01); }
+  .wm-card.hero {
+    grid-column: 1 / -1;
+    min-height: 400px;
+    background: var(--white);
+  }
+  .wm-card.on-dark { background: var(--dark); }
+  .wm-card.on-orange { background: var(--orange); }
+  .wm-card.on-tan { background: var(--tan); }
+  .wm-card.on-blue { background: var(--blue); }
+  .wm-card-label {
+    position: absolute;
+    top: 24px; left: 28px;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.35;
+  }
+  .wm {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  /* Sizes strip */
+  .wordmark-sizes {
+    margin-top: 16px;
+    padding: 56px 64px;
+    background: var(--white);
+    border-radius: 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 56px;
+    flex-wrap: wrap;
+  }
+  .wordmark-sizes .wm { color: var(--dark); }
+  .wordmark-sizes .wm span { color: var(--orange); }
+
+  /* Clearspace */
+  .wordmark-clearspace {
+    margin-top: 16px;
+    padding: 56px 64px;
+    background: var(--white);
+    border-radius: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .clearspace-text h3 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+  .clearspace-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--warm-gray);
+    line-height: 1.7;
+  }
+  .clearspace-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 48px;
+    position: relative;
+  }
+  .clearspace-demo .wm {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+    color: var(--dark);
+    position: relative;
+    z-index: 1;
+  }
+  .clearspace-demo .wm span { color: var(--orange); }
+  .clearspace-box {
+    position: absolute;
+    inset: 16px;
+    border: 1.5px dashed var(--orange);
+    border-radius: 12px;
+    opacity: 0.35;
+  }
+
+  /* =========================================
+     VOICE — orange section
+     ========================================= */
+  .voice-section {
+    background: var(--orange);
+    color: var(--white);
+    padding: 160px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .voice-section::before {
+    content: '"';
+    position: absolute;
+    top: -120px; right: 40px;
+    font-family: 'Clash Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 600px;
+    color: rgba(255,255,255,0.06);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .voice-header { margin-bottom: 80px; position: relative; z-index: 1; }
+  .voice-header .section-label { color: rgba(255,255,255,0.6); }
+  .voice-header .section-label::before { background: rgba(255,255,255,0.6); }
+  .voice-header .section-title { color: var(--white); }
+  .voice-header .section-sub { color: rgba(255,255,255,0.7); }
+
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .voice-card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 28px;
+    padding: 44px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .voice-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.18);
+  }
+  .voice-card-title {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .voice-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .voice-example {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+  }
+  .voice-do {
+    background: rgba(255,255,255,0.15);
+    color: var(--white);
+  }
+  .voice-do::before {
+    content: '\2713  ';
+    font-weight: 700;
+    color: #B6FFB6;
+  }
+  .voice-dont {
+    background: rgba(0,0,0,0.1);
+    color: rgba(255,255,255,0.6);
+  }
+  .voice-dont::before {
+    content: '\2717  ';
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Writing principles */
+  .voice-principles {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    padding-top: 64px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .voice-principle-label {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .voice-principle-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  /* =========================================
+     UI ELEMENTS
+     ========================================= */
+  .ui-section {
+    padding: 160px 0;
+  }
+  .ui-header { margin-bottom: 80px; }
+
+  .ui-group {
+    margin-bottom: 64px;
+  }
+  .ui-group-title {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--warm-gray);
+    margin-bottom: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .buttons-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .btn {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 16px 36px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.2px;
+  }
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+  }
+  .btn-primary:hover {
+    background: #E5502D;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(254, 96, 55, 0.35);
+  }
+  .btn-secondary {
+    background: var(--dark);
+    color: var(--cream);
+  }
+  .btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(38, 33, 33, 0.25);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--dark);
+    border: 2px solid var(--dark);
+  }
+  .btn-outline:hover {
+    background: var(--dark);
+    color: var(--cream);
+    transform: translateY(-3px);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--dark);
+    padding: 16px 20px;
+  }
+  .btn-ghost:hover { color: var(--orange); }
+  .btn-ghost::after {
+    content: ' \2192';
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+  .btn-ghost:hover::after { transform: translateX(4px); }
+  .btn-sm { padding: 12px 24px; font-size: 13px; }
+  .btn-lg { padding: 20px 48px; font-size: 16px; }
+
+  .ui-inputs-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .ui-input {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    padding: 16px 24px;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    background: var(--white);
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 280px;
+  }
+  .ui-input::placeholder { color: #C0B8AE; }
+  .ui-input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 4px rgba(254, 96, 55, 0.1);
+  }
+
+  .ui-tags-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ui-tag {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: var(--tan);
+    color: var(--dark);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .ui-tag:hover, .ui-tag.active {
+    background: var(--dark);
+    color: var(--cream);
+    transform: translateY(-2px);
+  }
+
+  .ui-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .ui-card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+    cursor: default;
+  }
+  .ui-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .ui-card-top { height: 160px; }
+  .ui-card-body { padding: 28px; }
+  .ui-card-body h4 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+  .ui-card-body p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  /* =========================================
+     FOOTER
+     ========================================= */
+  .brand-footer {
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+  }
+  .brand-footer-wm {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900;
+    font-size: clamp(80px, 12vw, 180px);
+    letter-spacing: -6px;
+    color: var(--dark);
+    opacity: 0.06;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .brand-footer-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--warm-gray);
+  }
+
+  /* =========================================
+     RESPONSIVE
+     ========================================= */
+  @media (max-width: 768px) {
+    .container { padding: 0 24px; }
+    .cover { padding: 100px 0 60px; }
+    .cover-wordmark { letter-spacing: -3px; }
+    .color-band { grid-template-columns: 1fr 1fr; min-height: auto; }
+    .color-band-cell { min-height: 160px; }
+    .colors-extended-grid { grid-template-columns: repeat(4, 1fr); }
+    .type-specimen { grid-template-columns: 1fr; gap: 20px; }
+    .wordmark-grid { grid-template-columns: 1fr; }
+    .wm-card.hero { min-height: 280px; }
+    .voice-grid { grid-template-columns: 1fr; }
+    .voice-principles { grid-template-columns: 1fr 1fr; }
+    .ui-cards-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-wordmark">studio<span>audience</span></div>
+  <ul class="nav-links">
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#typography">Type</a></li>
+    <li><a href="#wordmark">Wordmark</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#ui">UI</a></li>
+  </ul>
+</nav>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="container">
+    <div class="cover-inner">
+      <div class="cover-badge">Brand Guidelines v1.0</div>
+      <div class="cover-wordmark">studio<span>audience</span></div>
+      <div class="cover-tagline">Research that thinks and feels.</div>
+      <dl class="cover-meta">
+        <div><dt>Industry</dt><dd>UXR / CX</dd></div>
+        <div><dt>Audience</dt><dd>Startups & Scale-ups</dd></div>
+        <div><dt>Personality</dt><dd>Smart, Warm, Confident</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- COLOR BAND -->
+<div class="color-band">
+  <div class="color-band-cell" style="background: var(--orange);">
+    <div class="color-band-name" style="color: #fff;">Brand Orange</div>
+    <div class="color-band-hex" style="color: rgba(255,255,255,0.7);">#FE6037</div>
+    <div class="color-band-role" style="color: rgba(255,255,255,0.5);">Primary</div>
+  </div>
+  <div class="color-band-cell" style="background: var(--blue);">
+    <div class="color-band-name" style="color: #fff;">Trust Blue</div>
+    <div class="color-band-hex" style="color: rgba(255,255,255,0.7);">#3861F9</div>
+    <div class="color-band-role" style="color: rgba(255,255,255,0.5);">Secondary</div>
+  </div>
+  <div class="color-band-cell" style="background: var(--sage);">
+    <div class="color-band-name" style="color: var(--dark);">Sage</div>
+    <div class="color-band-hex" style="color: rgba(38,33,33,0.6);">#76C6B3</div>
+    <div class="color-band-role" style="color: rgba(38,33,33,0.4);">Tertiary</div>
+  </div>
+  <div class="color-band-cell" style="background: var(--dark);">
+    <div class="color-band-name" style="color: var(--cream);">Dark Brown</div>
+    <div class="color-band-hex" style="color: rgba(254,250,246,0.5);">#262121</div>
+    <div class="color-band-role" style="color: rgba(254,250,246,0.35);">Text & Anchors</div>
+  </div>
+</div>
+
+<!-- COLORS DETAIL -->
+<section class="colors-section reveal" id="colors">
+  <div class="container">
+    <div class="colors-header">
+      <div class="section-label">01 Palette</div>
+      <div class="section-title">Warm, punchy,<br>unmistakably ours</div>
+      <div class="section-sub" style="color: var(--warm-gray);">Orange leads with confidence. Blue earns trust. Sage brings balance. The supporting cast keeps things fresh without losing warmth.</div>
+    </div>
+
+    <div class="colors-extended-grid reveal reveal-d1">
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--orange);"></div>
+        <div class="color-ext-name">Orange</div>
+        <div class="color-ext-hex">#FE6037</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--blue);"></div>
+        <div class="color-ext-name">Blue</div>
+        <div class="color-ext-hex">#3861F9</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--sage);"></div>
+        <div class="color-ext-name">Sage</div>
+        <div class="color-ext-hex">#76C6B3</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--yellow);"></div>
+        <div class="color-ext-name">Yellow</div>
+        <div class="color-ext-hex">#FFD37D</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--pink);"></div>
+        <div class="color-ext-name">Pink</div>
+        <div class="color-ext-hex">#FFBAB9</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--peach);"></div>
+        <div class="color-ext-name">Peach</div>
+        <div class="color-ext-hex">#FFA37C</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--sky);"></div>
+        <div class="color-ext-name">Sky</div>
+        <div class="color-ext-hex">#70A2E1</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--dark);"></div>
+        <div class="color-ext-name">Dark</div>
+        <div class="color-ext-hex">#262121</div>
+      </div>
+    </div>
+
+    <div class="colors-extended-grid reveal reveal-d2" style="margin-top: 12px;">
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--cream); border: 1px solid var(--border);"></div>
+        <div class="color-ext-name">Cream</div>
+        <div class="color-ext-hex">#FEFAF6</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--tan);"></div>
+        <div class="color-ext-name">Tan</div>
+        <div class="color-ext-hex">#FAEBDC</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--white); border: 1px solid var(--border);"></div>
+        <div class="color-ext-name">White</div>
+        <div class="color-ext-hex">#FFFFFF</div>
+      </div>
+      <div class="color-ext">
+        <div class="color-ext-swatch" style="background: var(--warm-gray);"></div>
+        <div class="color-ext-name">Warm Gray</div>
+        <div class="color-ext-hex">#8A817A</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY (dark) -->
+<section class="type-section" id="typography">
+  <div class="container">
+    <div class="type-header reveal">
+      <div class="section-label light">02 Typography</div>
+      <div class="section-title" style="color: var(--cream);">Three fonts,<br>one clear voice</div>
+      <div class="section-sub">Clash Grotesk commands attention. Satoshi builds personality. Inter delivers clarity. Together they're expressive yet legible at any scale.</div>
+    </div>
+
+    <div class="type-specimens">
+      <div class="type-specimen reveal">
+        <div class="type-meta">
+          <div class="type-meta-name">Clash Grotesk</div>
+          <div class="type-meta-weight">Semibold 600</div>
+          <div class="type-meta-use">Display</div>
+        </div>
+        <div class="type-sample-display">Insights that move the needle</div>
+      </div>
+
+      <div class="type-specimen reveal">
+        <div class="type-meta">
+          <div class="type-meta-name">Satoshi</div>
+          <div class="type-meta-weight">Black 900 &middot; Bold 700</div>
+          <div class="type-meta-use">Headings & UI</div>
+        </div>
+        <div>
+          <div class="type-sample-heading">Your audience has something to say</div>
+          <div class="type-sample-heading-sub">We help you listen, understand, and act.</div>
+        </div>
+      </div>
+
+      <div class="type-specimen reveal">
+        <div class="type-meta">
+          <div class="type-meta-name">Inter</div>
+          <div class="type-meta-weight">Regular 400 &middot; Medium 500</div>
+          <div class="type-meta-use">Body</div>
+        </div>
+        <div class="type-sample-body">Great research doesn't just collect data — it uncovers the <strong>human truths</strong> behind behaviour. We combine AI-powered analysis with deep qualitative intuition to deliver insights that are both rigorous and actionable.</div>
+      </div>
+    </div>
+
+    <div class="type-scale reveal">
+      <div class="type-scale-row">
+        <div class="type-scale-size">72px</div>
+        <div class="type-scale-label">Display</div>
+        <div class="type-scale-sample" style="font-family:'Clash Grotesk',sans-serif;font-weight:600;font-size:72px;letter-spacing:-3px;line-height:1;color:var(--cream);">Aa</div>
+      </div>
+      <div class="type-scale-row">
+        <div class="type-scale-size">48px</div>
+        <div class="type-scale-label">H1</div>
+        <div style="font-family:'Satoshi',sans-serif;font-weight:900;font-size:48px;letter-spacing:-2px;line-height:1;color:var(--cream);">Aa</div>
+      </div>
+      <div class="type-scale-row">
+        <div class="type-scale-size">36px</div>
+        <div class="type-scale-label">H2</div>
+        <div style="font-family:'Satoshi',sans-serif;font-weight:700;font-size:36px;letter-spacing:-1px;line-height:1;color:var(--cream);">Aa</div>
+      </div>
+      <div class="type-scale-row">
+        <div class="type-scale-size">24px</div>
+        <div class="type-scale-label">H3</div>
+        <div style="font-family:'Satoshi',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.5px;line-height:1;color:var(--cream);">Aa</div>
+      </div>
+      <div class="type-scale-row">
+        <div class="type-scale-size">17px</div>
+        <div class="type-scale-label">Body</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:400;font-size:17px;line-height:1;color:var(--cream);">Aa</div>
+      </div>
+      <div class="type-scale-row">
+        <div class="type-scale-size">14px</div>
+        <div class="type-scale-label">Small</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:500;font-size:14px;line-height:1;color:var(--cream);">Aa</div>
+      </div>
+      <div class="type-scale-row">
+        <div class="type-scale-size">11px</div>
+        <div class="type-scale-label">Caption</div>
+        <div style="font-family:'Satoshi',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;line-height:1;color:var(--cream);">Aa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORDMARK -->
+<section class="wordmark-section reveal" id="wordmark">
+  <div class="container">
+    <div class="wordmark-header">
+      <div class="section-label">03 Wordmark</div>
+      <div class="section-title">studio<span>audience</span></div>
+      <div class="section-sub" style="color: var(--warm-gray);">Set in Satoshi Black. "studio" anchors in dark brown, "audience" carries the brand orange. No space — one name, one entity.</div>
+    </div>
+
+    <div class="wordmark-grid">
+      <div class="wm-card hero reveal">
+        <div class="wm-card-label" style="color: var(--warm-gray);">On White</div>
+        <div class="wm" style="font-size: 72px; letter-spacing: -3px; color: var(--dark);">studio<span style="color: var(--orange);">audience</span></div>
+      </div>
+      <div class="wm-card on-dark reveal reveal-d1">
+        <div class="wm-card-label" style="color: rgba(254,250,246,0.35);">On Dark</div>
+        <div class="wm" style="font-size: 48px; letter-spacing: -2px; color: var(--cream);">studio<span style="color: var(--orange);">audience</span></div>
+      </div>
+      <div class="wm-card on-orange reveal reveal-d2">
+        <div class="wm-card-label" style="color: rgba(255,255,255,0.4);">On Orange</div>
+        <div class="wm" style="font-size: 48px; letter-spacing: -2px; color: var(--white);">studio<span style="color: var(--dark);">audience</span></div>
+      </div>
+      <div class="wm-card on-tan reveal reveal-d1">
+        <div class="wm-card-label" style="color: var(--warm-gray);">On Tan</div>
+        <div class="wm" style="font-size: 48px; letter-spacing: -2px; color: var(--dark);">studio<span style="color: var(--orange);">audience</span></div>
+      </div>
+      <div class="wm-card on-blue reveal reveal-d2">
+        <div class="wm-card-label" style="color: rgba(255,255,255,0.4);">On Blue</div>
+        <div class="wm" style="font-size: 48px; letter-spacing: -2px; color: var(--white);">studio<span style="color: var(--cream);">audience</span></div>
+      </div>
+    </div>
+
+    <div class="wordmark-sizes reveal">
+      <div class="wm" style="font-size: 56px; letter-spacing: -2.5px;">studio<span>audience</span></div>
+      <div class="wm" style="font-size: 36px; letter-spacing: -1.5px;">studio<span>audience</span></div>
+      <div class="wm" style="font-size: 22px; letter-spacing: -0.5px;">studio<span>audience</span></div>
+      <div class="wm" style="font-size: 14px; letter-spacing: 0;">studio<span>audience</span></div>
+    </div>
+
+    <div class="wordmark-clearspace reveal">
+      <div class="clearspace-text">
+        <h3>Clear space</h3>
+        <p>Maintain minimum clear space around the wordmark equal to the cap-height of the "s" in "studio." This protects legibility and presence in all contexts — don't let other elements crowd it.</p>
+      </div>
+      <div class="clearspace-demo">
+        <div class="clearspace-box"></div>
+        <div class="wm">studio<span>audience</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE (orange section) -->
+<section class="voice-section" id="voice">
+  <div class="container">
+    <div class="voice-header reveal">
+      <div class="section-label">04 Voice & Tone</div>
+      <div class="section-title">Smart but<br>never cold</div>
+      <div class="section-sub">We lead with curiosity and deliver with clarity. Warm, approachable, jargon-free — because good research should be understood by everyone.</div>
+    </div>
+
+    <div class="voice-grid">
+      <div class="voice-card reveal">
+        <div class="voice-card-title">Curious</div>
+        <div class="voice-card-desc">We ask the right questions. Our tone conveys genuine interest in understanding, not just collecting data.</div>
+        <div class="voice-example voice-do">What's really driving churn?</div>
+        <div class="voice-example voice-dont">Our data shows a 12% increase in attrition metrics...</div>
+      </div>
+      <div class="voice-card reveal reveal-d1">
+        <div class="voice-card-title">Clear</div>
+        <div class="voice-card-desc">No jargon, no fluff. Complex findings translated into language anyone in the room can act on.</div>
+        <div class="voice-example voice-do">Users drop off because shipping costs surprise them.</div>
+        <div class="voice-example voice-dont">Leveraging cross-functional synergies in the user journey...</div>
+      </div>
+      <div class="voice-card reveal reveal-d2">
+        <div class="voice-card-title">Confident</div>
+        <div class="voice-card-desc">We stand behind our insights. Assured without arrogance, opinionated without rigidity.</div>
+        <div class="voice-example voice-do">The data is clear: your onboarding needs rethinking.</div>
+        <div class="voice-example voice-dont">It might possibly be worth considering perhaps...</div>
+      </div>
+    </div>
+
+    <div class="voice-principles reveal">
+      <div>
+        <div class="voice-principle-label">Lead with the insight</div>
+        <div class="voice-principle-desc">Don't bury the finding. Start with what matters, then give context.</div>
+      </div>
+      <div>
+        <div class="voice-principle-label">Show the human</div>
+        <div class="voice-principle-desc">Behind every data point is a person. Keep them visible.</div>
+      </div>
+      <div>
+        <div class="voice-principle-label">Be specific</div>
+        <div class="voice-principle-desc">Replace vague claims with concrete examples. Numbers need stories.</div>
+      </div>
+      <div>
+        <div class="voice-principle-label">Respect their time</div>
+        <div class="voice-principle-desc">Every word earns its place. If you can say it shorter, do.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UI ELEMENTS -->
+<section class="ui-section reveal" id="ui">
+  <div class="container">
+    <div class="ui-header">
+      <div class="section-label">05 UI Elements</div>
+      <div class="section-title">Components<br>& patterns</div>
+      <div class="section-sub" style="color: var(--warm-gray);">Pill-shaped, warm-toned, and designed to feel inviting at every touchpoint.</div>
+    </div>
+
+    <div class="ui-group reveal">
+      <div class="ui-group-title">Buttons</div>
+      <div class="buttons-row">
+        <button class="btn btn-primary btn-lg">Get started</button>
+        <button class="btn btn-secondary btn-lg">Learn more</button>
+        <button class="btn btn-outline btn-lg">Contact us</button>
+        <button class="btn btn-ghost btn-lg">Case studies</button>
+      </div>
+      <div class="buttons-row">
+        <button class="btn btn-primary">Get started</button>
+        <button class="btn btn-secondary">Learn more</button>
+        <button class="btn btn-outline">Contact us</button>
+        <button class="btn btn-ghost">Case studies</button>
+      </div>
+      <div class="buttons-row">
+        <button class="btn btn-primary btn-sm">Get started</button>
+        <button class="btn btn-secondary btn-sm">Learn more</button>
+        <button class="btn btn-outline btn-sm">Contact us</button>
+        <button class="btn btn-ghost btn-sm">Case studies</button>
+      </div>
+    </div>
+
+    <div class="ui-group reveal">
+      <div class="ui-group-title">Inputs</div>
+      <div class="ui-inputs-row">
+        <input class="ui-input" type="text" placeholder="Your email address">
+        <input class="ui-input" type="text" placeholder="Company name">
+        <button class="btn btn-primary">Subscribe</button>
+      </div>
+    </div>
+
+    <div class="ui-group reveal">
+      <div class="ui-group-title">Tags</div>
+      <div class="ui-tags-row">
+        <span class="ui-tag active">All</span>
+        <span class="ui-tag">UX Research</span>
+        <span class="ui-tag">CX Strategy</span>
+        <span class="ui-tag">Usability</span>
+        <span class="ui-tag">Journey Mapping</span>
+        <span class="ui-tag">Voice of Customer</span>
+      </div>
+    </div>
+
+    <div class="ui-group reveal">
+      <div class="ui-group-title">Cards</div>
+      <div class="ui-cards-grid">
+        <div class="ui-card">
+          <div class="ui-card-top" style="background: linear-gradient(135deg, var(--orange), #FF8A65);"></div>
+          <div class="ui-card-body">
+            <h4>Discovery Research</h4>
+            <p>Uncover the unknowns before you build. Interviews, surveys, and contextual inquiry.</p>
+          </div>
+        </div>
+        <div class="ui-card">
+          <div class="ui-card-top" style="background: linear-gradient(135deg, var(--blue), #6B8AFF);"></div>
+          <div class="ui-card-body">
+            <h4>Usability Testing</h4>
+            <p>Watch real users navigate your product. Find friction, fix flows, ship with confidence.</p>
+          </div>
+        </div>
+        <div class="ui-card">
+          <div class="ui-card-top" style="background: linear-gradient(135deg, var(--sage), #A8DED0);"></div>
+          <div class="ui-card-body">
+            <h4>CX Strategy</h4>
+            <p>Turn research into roadmaps. Align your team around what your audience actually needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="brand-footer">
+  <div class="container">
+    <div class="brand-footer-wm">studioaudience</div>
+    <div class="brand-footer-text">Brand Guidelines v1.0 &mdash; Studio Audience &copy; 2026</div>
+  </div>
+</div>
+
+<script>
+  // Scroll reveals
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(el => obs.observe(el));
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+</script>
+
+</body>
+</html>

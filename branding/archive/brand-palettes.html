@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Audience — Color Palettes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;700;900');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', 'Satoshi', system-ui, sans-serif;
+    background: #0A0A0A;
+    color: #E0E0E0;
+    padding: 60px 40px;
+    min-height: 100vh;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  .header h1 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .header p {
+    font-size: 18px;
+    color: #888;
+    font-weight: 400;
+  }
+  .header .tagline {
+    font-size: 16px;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+  }
+  .palettes {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .palette {
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 48px;
+    background: #111;
+    transition: border-color 0.3s;
+  }
+  .palette:hover {
+    border-color: #444;
+  }
+  .palette-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  .palette-name {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .palette-vibe {
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+  }
+  .palette-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #333;
+    color: #aaa;
+  }
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .swatch {
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .swatch-color {
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px 16px;
+  }
+  .swatch-info {
+    padding: 14px 16px;
+    background: #1A1A1A;
+  }
+  .swatch-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ccc;
+    margin-bottom: 4px;
+  }
+  .swatch-hex {
+    font-size: 12px;
+    color: #777;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+  .preview {
+    margin-top: 32px;
+    border-radius: 16px;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .preview h3 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .preview p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 560px;
+    opacity: 0.8;
+  }
+  .preview .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>studio audience</h1>
+  <p>Brand Palette Exploration</p>
+  <p class="tagline">"Research that thinks and feels."</p>
+</div>
+
+<div class="palettes">
+
+  <!-- PALETTE 1: Electric Indigo -->
+  <div class="palette">
+    <div class="palette-header">
+      <div>
+        <div class="palette-name">01 — Electric Indigo</div>
+        <div class="palette-vibe">Bold, innovative, tech-forward. High energy with depth.</div>
+      </div>
+      <div class="palette-tags">
+        <span class="tag">punchy</span>
+        <span class="tag">innovative</span>
+        <span class="tag">cool</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #0D0D12;"><span style="color:#555;font-size:11px;">primary</span></div>
+        <div class="swatch-info"><div class="swatch-label">Deep Space</div><div class="swatch-hex">#0D0D12</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #6C5CE7;"><span style="color:#fff;font-size:11px;">accent</span></div>
+        <div class="swatch-info"><div class="swatch-label">Electric Indigo</div><div class="swatch-hex">#6C5CE7</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #A29BFE;"><span style="color:#fff;font-size:11px;">accent light</span></div>
+        <div class="swatch-info"><div class="swatch-label">Soft Violet</div><div class="swatch-hex">#A29BFE</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #00F5D4;"><span style="color:#0D0D12;font-size:11px;">highlight</span></div>
+        <div class="swatch-info"><div class="swatch-label">Mint Spark</div><div class="swatch-hex">#00F5D4</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F8F7FF;"><span style="color:#999;font-size:11px;">background</span></div>
+        <div class="swatch-info"><div class="swatch-label">Ghost White</div><div class="swatch-hex">#F8F7FF</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #6B6B8D;"><span style="color:#ddd;font-size:11px;">muted</span></div>
+        <div class="swatch-info"><div class="swatch-label">Twilight</div><div class="swatch-hex">#6B6B8D</div></div>
+      </div>
+    </div>
+    <div class="preview" style="background: #F8F7FF; color: #0D0D12;">
+      <h3 style="color: #0D0D12;">Research that thinks and feels.</h3>
+      <p style="color: #6B6B8D;">We combine AI-powered analysis with human intuition to uncover the insights that drive better products.</p>
+      <a class="btn" style="background: #6C5CE7; color: #fff;" href="#">Book a Discovery Call</a>
+    </div>
+  </div>
+
+  <!-- PALETTE 2: Neon Coral x Slate -->
+  <div class="palette">
+    <div class="palette-header">
+      <div>
+        <div class="palette-name">02 — Neon Coral x Slate</div>
+        <div class="palette-vibe">Punchy warmth against cool slate. Confident and magnetic.</div>
+      </div>
+      <div class="palette-tags">
+        <span class="tag">punchy</span>
+        <span class="tag">confident</span>
+        <span class="tag">smart</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #12141A;"><span style="color:#555;font-size:11px;">primary</span></div>
+        <div class="swatch-info"><div class="swatch-label">Ink</div><div class="swatch-hex">#12141A</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FF6B6B;"><span style="color:#fff;font-size:11px;">accent</span></div>
+        <div class="swatch-info"><div class="swatch-label">Neon Coral</div><div class="swatch-hex">#FF6B6B</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FFA07A;"><span style="color:#12141A;font-size:11px;">accent light</span></div>
+        <div class="swatch-info"><div class="swatch-label">Peach Glow</div><div class="swatch-hex">#FFA07A</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #2D3142;"><span style="color:#aaa;font-size:11px;">surface</span></div>
+        <div class="swatch-info"><div class="swatch-label">Cool Slate</div><div class="swatch-hex">#2D3142</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F7F5F3;"><span style="color:#999;font-size:11px;">background</span></div>
+        <div class="swatch-info"><div class="swatch-label">Warm Fog</div><div class="swatch-hex">#F7F5F3</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #7A7D8E;"><span style="color:#ddd;font-size:11px;">muted</span></div>
+        <div class="swatch-info"><div class="swatch-label">Steel</div><div class="swatch-hex">#7A7D8E</div></div>
+      </div>
+    </div>
+    <div class="preview" style="background: #12141A; color: #F7F5F3;">
+      <h3 style="color: #FF6B6B;">Research that thinks and feels.</h3>
+      <p style="color: #7A7D8E;">We combine AI-powered analysis with human intuition to uncover the insights that drive better products.</p>
+      <a class="btn" style="background: #FF6B6B; color: #12141A;" href="#">Book a Discovery Call</a>
+    </div>
+  </div>
+
+  <!-- PALETTE 3: Midnight Teal -->
+  <div class="palette">
+    <div class="palette-header">
+      <div>
+        <div class="palette-name">03 — Midnight Teal</div>
+        <div class="palette-vibe">Cool, sophisticated, future-facing. Clean intelligence.</div>
+      </div>
+      <div class="palette-tags">
+        <span class="tag">cool</span>
+        <span class="tag">smart</span>
+        <span class="tag">sophisticated</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #0B1622;"><span style="color:#555;font-size:11px;">primary</span></div>
+        <div class="swatch-info"><div class="swatch-label">Midnight</div><div class="swatch-hex">#0B1622</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #00B4D8;"><span style="color:#fff;font-size:11px;">accent</span></div>
+        <div class="swatch-info"><div class="swatch-label">Bright Teal</div><div class="swatch-hex">#00B4D8</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #90E0EF;"><span style="color:#0B1622;font-size:11px;">accent light</span></div>
+        <div class="swatch-info"><div class="swatch-label">Ice</div><div class="swatch-hex">#90E0EF</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #CAF0F8;"><span style="color:#0B1622;font-size:11px;">highlight</span></div>
+        <div class="swatch-info"><div class="swatch-label">Frost</div><div class="swatch-hex">#CAF0F8</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F5FAFE;"><span style="color:#999;font-size:11px;">background</span></div>
+        <div class="swatch-info"><div class="swatch-label">Cloud White</div><div class="swatch-hex">#F5FAFE</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #64748B;"><span style="color:#ddd;font-size:11px;">muted</span></div>
+        <div class="swatch-info"><div class="swatch-label">Slate</div><div class="swatch-hex">#64748B</div></div>
+      </div>
+    </div>
+    <div class="preview" style="background: #F5FAFE; color: #0B1622;">
+      <h3 style="color: #0B1622;">Research that thinks and feels.</h3>
+      <p style="color: #64748B;">We combine AI-powered analysis with human intuition to uncover the insights that drive better products.</p>
+      <a class="btn" style="background: #00B4D8; color: #fff;" href="#">Book a Discovery Call</a>
+    </div>
+  </div>
+
+  <!-- PALETTE 4: Acid Lime x Black -->
+  <div class="palette">
+    <div class="palette-header">
+      <div>
+        <div class="palette-name">04 — Acid Lime x Black</div>
+        <div class="palette-vibe">Maximum punch. Disruptive, fearless, startup energy.</div>
+      </div>
+      <div class="palette-tags">
+        <span class="tag">punchy</span>
+        <span class="tag">disruptive</span>
+        <span class="tag">bold</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #0A0A0A;"><span style="color:#555;font-size:11px;">primary</span></div>
+        <div class="swatch-info"><div class="swatch-label">True Black</div><div class="swatch-hex">#0A0A0A</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #BEFF00;"><span style="color:#0A0A0A;font-size:11px;">accent</span></div>
+        <div class="swatch-info"><div class="swatch-label">Acid Lime</div><div class="swatch-hex">#BEFF00</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #D4FF66;"><span style="color:#0A0A0A;font-size:11px;">accent light</span></div>
+        <div class="swatch-info"><div class="swatch-label">Soft Lime</div><div class="swatch-hex">#D4FF66</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #1A1A1A;"><span style="color:#666;font-size:11px;">surface</span></div>
+        <div class="swatch-info"><div class="swatch-label">Carbon</div><div class="swatch-hex">#1A1A1A</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F5F5F0;"><span style="color:#999;font-size:11px;">background</span></div>
+        <div class="swatch-info"><div class="swatch-label">Paper</div><div class="swatch-hex">#F5F5F0</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #6B6B6B;"><span style="color:#ddd;font-size:11px;">muted</span></div>
+        <div class="swatch-info"><div class="swatch-label">Graphite</div><div class="swatch-hex">#6B6B6B</div></div>
+      </div>
+    </div>
+    <div class="preview" style="background: #0A0A0A; color: #F5F5F0;">
+      <h3 style="color: #BEFF00;">Research that thinks and feels.</h3>
+      <p style="color: #6B6B6B;">We combine AI-powered analysis with human intuition to uncover the insights that drive better products.</p>
+      <a class="btn" style="background: #BEFF00; color: #0A0A0A;" href="#">Book a Discovery Call</a>
+    </div>
+  </div>
+
+  <!-- PALETTE 5: Deep Purple x Gold -->
+  <div class="palette">
+    <div class="palette-header">
+      <div>
+        <div class="palette-name">05 — Deep Purple x Gold</div>
+        <div class="palette-vibe">Premium intelligence. Regal, innovative, unexpected.</div>
+      </div>
+      <div class="palette-tags">
+        <span class="tag">smart</span>
+        <span class="tag">premium</span>
+        <span class="tag">innovative</span>
+      </div>
+    </div>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #110B20;"><span style="color:#555;font-size:11px;">primary</span></div>
+        <div class="swatch-info"><div class="swatch-label">Deep Purple</div><div class="swatch-hex">#110B20</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #8B5CF6;"><span style="color:#fff;font-size:11px;">accent</span></div>
+        <div class="swatch-info"><div class="swatch-label">Vivid Violet</div><div class="swatch-hex">#8B5CF6</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F5C542;"><span style="color:#110B20;font-size:11px;">highlight</span></div>
+        <div class="swatch-info"><div class="swatch-label">Signal Gold</div><div class="swatch-hex">#F5C542</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #C4B5FD;"><span style="color:#110B20;font-size:11px;">accent light</span></div>
+        <div class="swatch-info"><div class="swatch-label">Lavender</div><div class="swatch-hex">#C4B5FD</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #FAF8FF;"><span style="color:#999;font-size:11px;">background</span></div>
+        <div class="swatch-info"><div class="swatch-label">Pale Violet</div><div class="swatch-hex">#FAF8FF</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #7C6F9B;"><span style="color:#ddd;font-size:11px;">muted</span></div>
+        <div class="swatch-info"><div class="swatch-label">Haze</div><div class="swatch-hex">#7C6F9B</div></div>
+      </div>
+    </div>
+    <div class="preview" style="background: #110B20; color: #FAF8FF;">
+      <h3 style="color: #F5C542;">Research that thinks and feels.</h3>
+      <p style="color: #7C6F9B;">We combine AI-powered analysis with human intuition to uncover the insights that drive better products.</p>
+      <a class="btn" style="background: #8B5CF6; color: #fff;" href="#">Book a Discovery Call</a>
+    </div>
+  </div>
+
+</div>
+
+<div style="text-align: center; margin-top: 80px; padding-bottom: 60px; color: #444; font-size: 13px;">
+  Studio Audience — Brand Palette Exploration — 2026
+</div>
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Audience — Logo Explorations</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #F8F7FF;
+    color: #1a1a2e;
+    padding: 80px 40px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 80px;
+  }
+  .header h1 {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    color: #0D0D12;
+  }
+  .header p {
+    font-size: 16px;
+    color: #6B6B8D;
+    line-height: 1.7;
+  }
+  .concepts {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .concept {
+    background: #fff;
+    border: 1px solid #E8E7F0;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .concept:hover {
+    box-shadow: 0 8px 40px rgba(108, 92, 231, 0.08);
+  }
+  .concept-display {
+    padding: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    min-height: 240px;
+    background: #FCFBFF;
+    border-bottom: 1px solid #F0EFF8;
+  }
+  .concept-wordmark {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #0D0D12;
+  }
+  .concept-wordmark span { color: #6C5CE7; }
+  .concept-info {
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
+  }
+  .concept-name {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0D0D12;
+    margin-bottom: 4px;
+  }
+  .concept-subtitle {
+    font-size: 13px;
+    color: #6C5CE7;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .concept-desc {
+    font-size: 14px;
+    color: #6B6B8D;
+    line-height: 1.7;
+  }
+  .concept-rationale {
+    font-size: 14px;
+    color: #6B6B8D;
+    line-height: 1.7;
+  }
+  .concept-rationale strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  /* Dark bg variant row */
+  .variant-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: #F0EFF8;
+    border-top: 1px solid #F0EFF8;
+  }
+  .variant-cell {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .variant-cell.on-white { background: #fff; }
+  .variant-cell.on-light { background: #F8F7FF; }
+  .variant-cell.on-dark { background: #0D0D12; }
+  .variant-cell .vw {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+  }
+  .variant-label {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .concept-info { grid-template-columns: 1fr; }
+    .concept-display { padding: 40px 24px; flex-direction: column; }
+    .variant-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Logo Explorations</h1>
+  <p>Building on the circles-as-audience concept, each version adds a visual metaphor for <strong>finding insights in data</strong> — the signal in the noise, the pattern in the crowd.</p>
+</div>
+
+<div class="concepts">
+
+  <!-- CONCEPT A: Insight Spotlight -->
+  <div class="concept">
+    <div class="concept-display">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <!-- Audience circle of dots -->
+        <circle cx="36" cy="8" r="4.5" fill="#C4C0E0"/>
+        <circle cx="52" cy="13" r="4.5" fill="#C4C0E0"/>
+        <circle cx="60" cy="28" r="4.5" fill="#C4C0E0"/>
+        <circle cx="56" cy="44" r="4.5" fill="#C4C0E0"/>
+        <circle cx="44" cy="56" r="4.5" fill="#C4C0E0"/>
+        <circle cx="28" cy="56" r="4.5" fill="#C4C0E0"/>
+        <circle cx="16" cy="44" r="4.5" fill="#C4C0E0"/>
+        <circle cx="12" cy="28" r="4.5" fill="#C4C0E0"/>
+        <circle cx="20" cy="13" r="4.5" fill="#C4C0E0"/>
+        <!-- The insight dot - one stands out -->
+        <circle cx="52" cy="13" r="5.5" fill="#6C5CE7"/>
+        <circle cx="52" cy="13" r="9" stroke="#6C5CE7" stroke-width="1.5" fill="none" opacity="0.4"/>
+        <circle cx="52" cy="13" r="14" stroke="#6C5CE7" stroke-width="1" fill="none" opacity="0.15"/>
+      </svg>
+      <div class="concept-wordmark">studio <span>audience</span></div>
+    </div>
+    <div class="concept-info">
+      <div>
+        <div class="concept-name">A — Insight Spotlight</div>
+        <div class="concept-subtitle">The signal in the crowd</div>
+        <div class="concept-desc">One dot in the audience ring is highlighted with radiating ripples — the insight emerging from the data.</div>
+      </div>
+      <div class="concept-rationale">
+        <strong>Why it works:</strong> Keeps your original audience-circle structure. The ripple effect adds energy and communicates discovery — like finding the one data point that changes everything. The muted dots = raw data, the highlighted dot = the insight you extract.
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT B: Connected Constellation -->
+  <div class="concept">
+    <div class="concept-display">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <!-- Connection lines first (behind dots) -->
+        <line x1="36" y1="8" x2="52" y2="14" stroke="#6C5CE7" stroke-width="1" opacity="0.25"/>
+        <line x1="52" y1="14" x2="58" y2="30" stroke="#6C5CE7" stroke-width="1" opacity="0.25"/>
+        <line x1="36" y1="8" x2="20" y2="14" stroke="#6C5CE7" stroke-width="1" opacity="0.25"/>
+        <line x1="52" y1="14" x2="44" y2="56" stroke="#6C5CE7" stroke-width="1" opacity="0.12"/>
+        <line x1="20" y1="14" x2="16" y2="44" stroke="#6C5CE7" stroke-width="1" opacity="0.12"/>
+        <line x1="58" y1="30" x2="54" y2="46" stroke="#6C5CE7" stroke-width="1" opacity="0.25"/>
+        <line x1="16" y1="44" x2="28" y2="56" stroke="#6C5CE7" stroke-width="1" opacity="0.25"/>
+        <line x1="28" y1="56" x2="44" y2="56" stroke="#6C5CE7" stroke-width="1" opacity="0.25"/>
+        <!-- Cross connections for insight pattern -->
+        <line x1="36" y1="8" x2="36" y2="36" stroke="#6C5CE7" stroke-width="1.5" opacity="0.3"/>
+        <line x1="20" y1="14" x2="54" y2="46" stroke="#6C5CE7" stroke-width="1" opacity="0.15"/>
+        <line x1="52" y1="14" x2="16" y2="44" stroke="#6C5CE7" stroke-width="1" opacity="0.15"/>
+        <!-- Audience dots -->
+        <circle cx="36" cy="8" r="4.5" fill="#6C5CE7"/>
+        <circle cx="52" cy="14" r="4.5" fill="#6C5CE7"/>
+        <circle cx="58" cy="30" r="3.5" fill="#A29BFE"/>
+        <circle cx="54" cy="46" r="3.5" fill="#A29BFE"/>
+        <circle cx="44" cy="56" r="4" fill="#6C5CE7"/>
+        <circle cx="28" cy="56" r="4" fill="#6C5CE7"/>
+        <circle cx="16" cy="44" r="3.5" fill="#A29BFE"/>
+        <circle cx="14" cy="28" r="3.5" fill="#A29BFE"/>
+        <circle cx="20" cy="14" r="4.5" fill="#6C5CE7"/>
+        <!-- Center insight node -->
+        <circle cx="36" cy="36" r="5" fill="#00F5D4"/>
+      </svg>
+      <div class="concept-wordmark">studio <span>audience</span></div>
+    </div>
+    <div class="concept-info">
+      <div>
+        <div class="concept-name">B — Connected Constellation</div>
+        <div class="concept-subtitle">Patterns in people</div>
+        <div class="concept-desc">Audience dots connected by subtle lines revealing a hidden pattern, with a central insight node in mint.</div>
+      </div>
+      <div class="concept-rationale">
+        <strong>Why it works:</strong> The connections represent the relationships and patterns you uncover in research. Scattered dots alone are just data — connected dots are insight. The mint center node is the "aha" moment, the synthesis. Feels like a data visualization / network graph.
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT C: Lens / Focus -->
+  <div class="concept">
+    <div class="concept-display">
+      <svg width="76" height="72" viewBox="0 0 76 72" fill="none">
+        <!-- Scattered audience dots -->
+        <circle cx="10" cy="14" r="3.5" fill="#D5D2EB"/>
+        <circle cx="22" cy="8" r="3" fill="#D5D2EB"/>
+        <circle cx="38" cy="5" r="3.5" fill="#D5D2EB"/>
+        <circle cx="54" cy="10" r="3" fill="#D5D2EB"/>
+        <circle cx="66" cy="16" r="3.5" fill="#D5D2EB"/>
+        <circle cx="8" cy="32" r="3" fill="#D5D2EB"/>
+        <circle cx="68" cy="34" r="3" fill="#D5D2EB"/>
+        <circle cx="12" cy="50" r="3.5" fill="#D5D2EB"/>
+        <circle cx="64" cy="52" r="3.5" fill="#D5D2EB"/>
+        <circle cx="22" cy="62" r="3" fill="#D5D2EB"/>
+        <circle cx="54" cy="60" r="3" fill="#D5D2EB"/>
+        <circle cx="38" cy="66" r="3.5" fill="#D5D2EB"/>
+        <!-- Lens circle -->
+        <circle cx="38" cy="36" r="20" stroke="#6C5CE7" stroke-width="2" fill="rgba(108,92,231,0.04)"/>
+        <!-- Dots inside lens are vivid / highlighted -->
+        <circle cx="30" cy="28" r="4" fill="#6C5CE7"/>
+        <circle cx="42" cy="24" r="3.5" fill="#6C5CE7"/>
+        <circle cx="48" cy="36" r="3.5" fill="#6C5CE7"/>
+        <circle cx="38" cy="44" r="4" fill="#6C5CE7"/>
+        <circle cx="28" cy="40" r="3" fill="#A29BFE"/>
+        <!-- Lens handle hint -->
+        <line x1="52" y1="50" x2="62" y2="60" stroke="#6C5CE7" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="concept-wordmark">studio <span>audience</span></div>
+    </div>
+    <div class="concept-info">
+      <div>
+        <div class="concept-name">C — The Lens</div>
+        <div class="concept-subtitle">Focus reveals clarity</div>
+        <div class="concept-desc">Scattered, faded dots represent raw audience data. A lens brings the ones inside into focus — vivid and clear.</div>
+      </div>
+      <div class="concept-rationale">
+        <strong>Why it works:</strong> Directly communicates the core value prop — we look at your messy audience data and bring clarity. The contrast between blurred/muted dots outside and sharp/vivid dots inside the lens is immediately readable. The magnifying glass is a universal symbol for research and discovery.
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT D: Data to Insight (gradient reveal) -->
+  <div class="concept">
+    <div class="concept-display">
+      <svg width="80" height="72" viewBox="0 0 80 72" fill="none">
+        <!-- Left side: scattered, grey, messy dots (raw data) -->
+        <circle cx="6" cy="20" r="3" fill="#D5D2EB"/>
+        <circle cx="14" cy="36" r="2.5" fill="#D5D2EB"/>
+        <circle cx="8" cy="50" r="3.5" fill="#D5D2EB"/>
+        <circle cx="18" cy="14" r="2.5" fill="#D5D2EB"/>
+        <circle cx="20" cy="54" r="2.5" fill="#D5D2EB"/>
+        <circle cx="12" cy="44" r="2" fill="#D5D2EB"/>
+        <circle cx="16" cy="26" r="2" fill="#D5D2EB"/>
+        <!-- Middle transition -->
+        <circle cx="28" cy="18" r="3" fill="#C4C0E0"/>
+        <circle cx="32" cy="38" r="3.5" fill="#B5B0E0"/>
+        <circle cx="30" cy="52" r="3" fill="#C4C0E0"/>
+        <circle cx="34" cy="26" r="2.5" fill="#B5B0E0"/>
+        <!-- Right side: organized, vivid, forming a clear pattern -->
+        <circle cx="48" cy="12" r="4" fill="#8B7FE8"/>
+        <circle cx="60" cy="12" r="4" fill="#6C5CE7"/>
+        <circle cx="72" cy="12" r="4" fill="#6C5CE7"/>
+        <circle cx="48" cy="28" r="4" fill="#6C5CE7"/>
+        <circle cx="60" cy="28" r="4.5" fill="#6C5CE7"/>
+        <circle cx="72" cy="28" r="4.5" fill="#6C5CE7"/>
+        <circle cx="48" cy="44" r="4" fill="#8B7FE8"/>
+        <circle cx="60" cy="44" r="4.5" fill="#6C5CE7"/>
+        <circle cx="72" cy="44" r="5" fill="#6C5CE7"/>
+        <circle cx="48" cy="60" r="3.5" fill="#A29BFE"/>
+        <circle cx="60" cy="60" r="4" fill="#6C5CE7"/>
+        <circle cx="72" cy="60" r="5.5" fill="#00F5D4"/>
+        <!-- Arrow hint -->
+        <line x1="22" y1="36" x2="40" y2="36" stroke="#6C5CE7" stroke-width="1" opacity="0.3" stroke-dasharray="3 3"/>
+      </svg>
+      <div class="concept-wordmark">studio <span>audience</span></div>
+    </div>
+    <div class="concept-info">
+      <div>
+        <div class="concept-name">D — Data → Insight</div>
+        <div class="concept-subtitle">From noise to signal</div>
+        <div class="concept-desc">Dots flow from scattered chaos (left) to organized, sized-by-importance grid (right), with the key insight glowing in mint.</div>
+      </div>
+      <div class="concept-rationale">
+        <strong>Why it works:</strong> Tells a story left-to-right: raw data becomes structured insight. The varying dot sizes on the right suggest weighted importance — like a bubble chart. The mint dot at bottom-right is the breakthrough finding. This one leans more "data visualization" and feels analytical.
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT E: Audience Ring + Spark -->
+  <div class="concept">
+    <div class="concept-display">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <!-- Outer audience ring - varied sizes for organic feel -->
+        <circle cx="36" cy="6" r="4" fill="#0D0D12"/>
+        <circle cx="51" cy="10" r="4.5" fill="#0D0D12"/>
+        <circle cx="60" cy="23" r="4" fill="#0D0D12"/>
+        <circle cx="62" cy="38" r="4.5" fill="#0D0D12"/>
+        <circle cx="55" cy="52" r="4" fill="#0D0D12"/>
+        <circle cx="42" cy="60" r="4.5" fill="#0D0D12"/>
+        <circle cx="28" cy="60" r="4" fill="#0D0D12"/>
+        <circle cx="16" cy="52" r="4.5" fill="#0D0D12"/>
+        <circle cx="10" cy="38" r="4" fill="#0D0D12"/>
+        <circle cx="12" cy="23" r="4.5" fill="#0D0D12"/>
+        <circle cx="21" cy="10" r="4" fill="#0D0D12"/>
+        <!-- Inner spark / starburst - the insight moment -->
+        <line x1="36" y1="24" x2="36" y2="48" stroke="#6C5CE7" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="24" y1="36" x2="48" y2="36" stroke="#6C5CE7" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="28" y1="28" x2="44" y2="44" stroke="#6C5CE7" stroke-width="2" stroke-linecap="round"/>
+        <line x1="44" y1="28" x2="28" y2="44" stroke="#6C5CE7" stroke-width="2" stroke-linecap="round"/>
+        <!-- Center glow -->
+        <circle cx="36" cy="36" r="4" fill="#6C5CE7"/>
+        <circle cx="36" cy="36" r="7" fill="none" stroke="#6C5CE7" stroke-width="1" opacity="0.3"/>
+      </svg>
+      <div class="concept-wordmark">studio <span>audience</span></div>
+    </div>
+    <div class="concept-info">
+      <div>
+        <div class="concept-name">E — Audience + Spark</div>
+        <div class="concept-subtitle">The "aha" moment</div>
+        <div class="concept-desc">Your original audience ring with a starburst/spark at the center — the moment of insight discovery.</div>
+      </div>
+      <div class="concept-rationale">
+        <strong>Why it works:</strong> Closest evolution of your original logo. The audience circle stays intact but now has meaning at its center — a spark that represents the insight born from research. Dark dots = the audience, indigo spark = the discovery. Clean, memorable, and iconic.
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT F: Converging Focus -->
+  <div class="concept">
+    <div class="concept-display">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <!-- Outer scattered dots -->
+        <circle cx="4" cy="4" r="3" fill="#E0DDF2"/>
+        <circle cx="68" cy="6" r="2.5" fill="#E0DDF2"/>
+        <circle cx="6" cy="68" r="2.5" fill="#E0DDF2"/>
+        <circle cx="66" cy="66" r="3" fill="#E0DDF2"/>
+        <circle cx="36" cy="2" r="2.5" fill="#E0DDF2"/>
+        <circle cx="2" cy="36" r="2.5" fill="#E0DDF2"/>
+        <circle cx="70" cy="36" r="2.5" fill="#E0DDF2"/>
+        <circle cx="36" cy="70" r="2.5" fill="#E0DDF2"/>
+        <!-- Mid ring - getting closer -->
+        <circle cx="18" cy="14" r="3.5" fill="#C4C0E0"/>
+        <circle cx="54" cy="16" r="3" fill="#C4C0E0"/>
+        <circle cx="56" cy="50" r="3.5" fill="#C4C0E0"/>
+        <circle cx="16" cy="52" r="3" fill="#C4C0E0"/>
+        <circle cx="36" cy="14" r="3" fill="#C4C0E0"/>
+        <circle cx="56" cy="34" r="3" fill="#C4C0E0"/>
+        <circle cx="16" cy="34" r="3" fill="#C4C0E0"/>
+        <circle cx="36" cy="56" r="3" fill="#C4C0E0"/>
+        <!-- Inner cluster - the insight zone -->
+        <circle cx="28" cy="28" r="4" fill="#6C5CE7"/>
+        <circle cx="44" cy="28" r="4" fill="#6C5CE7"/>
+        <circle cx="28" cy="44" r="4" fill="#6C5CE7"/>
+        <circle cx="44" cy="44" r="4" fill="#6C5CE7"/>
+        <!-- Center: the synthesis -->
+        <circle cx="36" cy="36" r="5.5" fill="#00F5D4"/>
+      </svg>
+      <div class="concept-wordmark">studio <span>audience</span></div>
+    </div>
+    <div class="concept-info">
+      <div>
+        <div class="concept-name">F — Converging Focus</div>
+        <div class="concept-subtitle">Data distilled</div>
+        <div class="concept-desc">Three concentric layers — scattered data on the outside, clustered patterns in the middle, synthesized insight at the center.</div>
+      </div>
+      <div class="concept-rationale">
+        <strong>Why it works:</strong> Visualizes the research funnel: wide data collection → pattern recognition → focused insight. The three layers (faded outer → indigo mid → mint center) naturally guide the eye inward to the conclusion. Communicates process and rigor.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="text-align: center; margin-top: 80px; padding-bottom: 60px; color: #9494B0; font-size: 13px;">
+  Studio Audience — Logo Explorations — March 2026
+</div>
+
+</body>
+</html>
